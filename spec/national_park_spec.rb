@@ -5,7 +5,12 @@ require './lib/national_park'
 
 RSpec.describe NationalPark do
     let(:park) {NationalPark.new("Carlsbad Caverns", 15)}
+
     let(:vehicle) { Vehicle.new("2001", "Honda", "Civic") }
+
+    let(:charlie) { Passenger.new({"name" => "Charlie", "age" => 18}) }  
+    let(:jude) { Passenger.new({"name" => "Jude", "age" => 20}) }  
+    let(:taylor) { Passenger.new({"name" => "Taylor", "age" => 12}) }
 
 
     it "exists" do
@@ -23,6 +28,16 @@ RSpec.describe NationalPark do
         park.enter(vehicle)
 
         expect(park.vehicles_in_park).to eq([vehicle])
+    end
+
+    it "can list all the passengers that enter the park" do
+        vehicle.add_passenger(charlie)  
+        vehicle.add_passenger(jude) 
+        vehicle.add_passenger(taylor) 
+        
+        park.enter(vehicle)
+
+        expect(park.passengers_in_park).to eq([charlie, jude, taylor])
     end
 
 
