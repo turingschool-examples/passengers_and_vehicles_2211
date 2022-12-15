@@ -18,4 +18,10 @@ class Park
       end
     end.flatten
   end
+
+  def revenue
+    vehicles.sum do |vehicle|  
+    (vehicle.num_adults * admission_price)
+    end
+  end
 end
