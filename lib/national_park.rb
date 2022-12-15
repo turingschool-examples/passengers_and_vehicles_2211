@@ -31,4 +31,16 @@ class NationalPark
    names = passengers.map { |passenger| passenger.name}
    names.sort { |a,b| a <=> b}
   end
+  
+  def adults
+    adults = passengers.find_all { |passenger| passenger.adult? == true}
+    adult_names = adults.map { |adult| adult.name}
+    adult_names.sort { |a,b| a <=> b}
+  end
+
+  def minors
+    minors = passengers.find_all { |passenger| passenger.adult? == false}
+    minor_names = minors.map { |minor| minor.name}
+    minor_names.sort { |a,b| a <=> b}
+  end
 end
