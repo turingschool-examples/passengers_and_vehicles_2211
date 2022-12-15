@@ -1,6 +1,7 @@
 require 'rspec'
 require './lib/passenger'
 require './lib/vehicle'
+require './lib/park'
 
 RSpec.describe 'Passenger and Vehicles Spec Harness' do
   before(:each) do
