@@ -16,7 +16,7 @@ RSpec.describe Vehicle do
     expect(vehicle.speeding?).to eq(false)
 
     vehicle.speeding
-    
-    expect(vehicl.speeding?).to eq(true)
+
+    expect(vehicle.speeding?).to eq(true)
   end
 end
