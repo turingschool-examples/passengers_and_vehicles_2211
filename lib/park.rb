@@ -1,9 +1,8 @@
 class Park
 	attr_reader :name,
 							:admission_price,
-							:vehicles_in_park,
-							:revenue
-
+							:vehicles_in_park
+							
 	def initialize(name, admission)
 		@name = name
 		@admission_price = admission
@@ -24,5 +23,13 @@ class Park
 			@revenue << @admission_price if passenger.adult?
 		end
 		@revenue.reduce(:+)
+	end
+
+	def list_of_attendees(vehicle)
+		attendee_names = []
+		vehicle.passengers.each do |passenger|
+			attendee_names << passenger.name
+		end
+		alphabetical_names = attendee_names.sort!
 	end
 end

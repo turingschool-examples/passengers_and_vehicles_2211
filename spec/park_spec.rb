@@ -47,4 +47,14 @@ RSpec.describe do
 
 		expect(park.calculate_rev(vehicle1)).to eq(40)
 	end
+
+	it "lists attendees" do 
+		vehicle1.add_passenger(jude)
+		vehicle1.add_passenger(charlie)
+		vehicle1.add_passenger(taylor)
+
+		park.add_vehicle(vehicle1)
+
+		expect(park.list_of_attendees(vehicle1)).to eq(["Charlie", "Jude", "Taylor"])
+	end
 end
