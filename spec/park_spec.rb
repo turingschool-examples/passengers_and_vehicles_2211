@@ -36,4 +36,9 @@ RSpec.describe Vehicle do
         park1.charge
         expect(park1.revenue).to eq(10)
     end
+
+    it 'can list all patrons' do
+        park1.add_patron(charlie)
+        expect(park1.patrons).to eq([charlie])
+    end
 end

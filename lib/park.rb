@@ -1,11 +1,16 @@
 class Park
-    attr_reader :name, :admission, :vehicles_in_park, :revenue
+    attr_reader :name, 
+                :admission, 
+                :vehicles_in_park, 
+                :revenue,
+                :patrons
 
     def initialize(name, admission)
         @name = name
         @admission = admission
         @vehicles_in_park = []
         @revenue = 0
+        @patrons = [].sort
     end
 
     def add_vehicle(vehicle)
@@ -23,6 +28,10 @@ class Park
 
     def charge
         @revenue += @admission
+    end
+
+    def add_patron(patron)
+        @patrons << patron
     end
 
 end

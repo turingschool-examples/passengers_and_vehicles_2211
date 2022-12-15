@@ -1,5 +1,8 @@
 class Passenger
-    attr_reader :name, :age, :adult, :driver
+    attr_reader :name, 
+                :age, 
+                :adult, 
+                :driver
 
     def initialize(info)
         @name = info["name"]
