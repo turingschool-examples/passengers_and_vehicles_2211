@@ -13,6 +13,12 @@ RSpec.describe Park do
     it "exists" do
       expect(park).to be_an_instance_of(Park)
     end
+
+    it "has attributes" do
+      expect(park.name).to eq("Yosemite")
+      expect(park.admission).to eq(20)
+      expect(park.vehicles).to eq([])
+    end
     
   end
 end
