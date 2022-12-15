@@ -13,4 +13,13 @@ class NationalPark
         @vehicles_in_park << vehicle
     end
 
+    def passengers_in_park
+        all_passengers_in_park = []
+        @vehicles_in_park.each do |vehicle|
+            all_passengers_in_park << vehicle.passengers
+        end
+        all_passengers_in_park.flatten
+    end
+
+
 end
