@@ -27,18 +27,4 @@ class Park
     def charge
         @revenue += @admission
     end
-
-    def list_patrons
-        list_passengers.sort
-    end
-    # def add_patron(patron)
-    #     @patrons << patron
-    # end
-
-    # def list_patrons
-    #     patrons.map do |patron|
-    #         patron
-    #     end
-    # end
-
 end

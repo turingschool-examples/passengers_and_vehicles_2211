@@ -36,13 +36,4 @@ RSpec.describe Park do
         park1.charge
         expect(park1.revenue).to eq(10)
     end
-
-    it 'can list all patrons' do
-        park1.add_vehicle(vehicle1)
-        park1.add_vehicle(vehicle2)
-        vehicle1.add_passenger(jude)
-        vehicle1.add_passenger(taylor)
-        vehicle2.add_passenger(charlie)
-        expect(park1.list_patrons).to eq([jude, taylor, charlie])
-    end
 end
