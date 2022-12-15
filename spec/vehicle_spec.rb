@@ -20,4 +20,8 @@ RSpec.describe Vehicle do
 		expect(vehicle.model).to eq("Civic")
 	end
 
+	it "is not speeding by default" do 
+		expect(vehicle.speeding?).to eq(false)
+	end
+
 end
