@@ -19,7 +19,7 @@ describe Passenger do
         expect(taylor.adult?).to be false
     end
 
-    xit 'can determine driver' do
+    it 'can determine driver' do
         expect(charlie.driver?).to be false
         
         charlie.drive
