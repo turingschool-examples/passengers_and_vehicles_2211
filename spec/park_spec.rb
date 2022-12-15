@@ -76,7 +76,7 @@ describe Park do
         expect(glacier.patrons).to eq(["Charlie","Joe", "Jude", "Meghan", "Taylor", "Tori"])
     end
 
-    it 'can list minors' do
+    it 'can list adults' do
         vehicle_1.add_passenger(charlie)  
         vehicle_1.add_passenger(jude)
         vehicle_1.add_passenger(taylor) 
@@ -90,7 +90,7 @@ describe Park do
         expect(glacier.adults).to eq(["Charlie", "Joe", "Jude", "Meghan", "Tori"])
     end
 
-    xit 'can list minors' do
+    it 'can list minors' do
         vehicle_1.add_passenger(charlie)  
         vehicle_1.add_passenger(jude)
         vehicle_1.add_passenger(taylor) 
