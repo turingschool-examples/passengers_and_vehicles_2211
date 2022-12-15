@@ -27,6 +27,17 @@ describe Vehicle do
       expect(vehicle.speeding?).to eq(true)
     end
 
+		it 'can hold passengers' do
+
+      expect(vehicle.passengers).to eq([])
+
+      vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
+
+      expect(vehicle.passengers).to eq([charlie, jude, taylor])
+    end
+
 	end
 
 end
