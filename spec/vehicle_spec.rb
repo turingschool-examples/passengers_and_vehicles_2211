@@ -39,5 +39,15 @@ describe Vehicle do
 
       expect(@vehicle.passengers).to eq([@charlie, @jude, @taylor])
     end
+
+    it '5. can get number of adults' do
+      expect(@vehicle.num_adults).to eq(0)
+
+      @vehicle.add_passenger(@charlie)
+      @vehicle.add_passenger(@jude)
+      @vehicle.add_passenger(@taylor)
+
+      expect(@vehicle.num_adults).to eq(2)
+    end
   end
 end
