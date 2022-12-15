@@ -10,12 +10,15 @@ RSpec.describe Passenger do
         expect(taylor).to be_instance_of(Passenger)
     end
 
-    it "has atributes" do
+    it "has attributes" do
         expect(charlie.name).to eq("Charlie")
         expect(charlie.age).to eq(18)
     end
 
-
+    it "can determine if a passenger is an adult" do
+        expect(charlie.adult?).to eq(true)
+        expect(taylor.adult?).to eq(false)
+    end
 
 
 end
