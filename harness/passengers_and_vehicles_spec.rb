@@ -8,7 +8,7 @@ RSpec.describe 'Passenger and Vehicles Spec Harness' do
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
   end
 
-  describe 'Iteration 1'
+  describe 'Iteration 1' do 
     it '1. Passenger Instantiation' do
       expect(Passenger).to respond_to(:new).with(1).argument
 
