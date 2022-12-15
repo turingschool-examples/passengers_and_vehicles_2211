@@ -26,12 +26,15 @@ RSpec.describe Passenger do
   end
 
   describe '#driver?' do 
-    charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+    it 'is false by default until they drive' do 
 
-    expect(charlie.driver?).to eq(false)
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
 
-    charlie.drive 
+      expect(charlie.driver?).to eq(false)
 
-    expect(charlie.driver).to eq(true)
+      charlie.drive 
+
+      expect(charlie.driver?).to eq(true)
+    end
   end
 end
