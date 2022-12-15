@@ -39,6 +39,8 @@ RSpec.describe Vehicle do
 
     it 'can list all patrons' do
         park1.add_patron(charlie)
-        expect(park1.patrons).to eq([charlie])
+        park1.add_patron(taylor)
+        park1.add_patron(jude)
+        expect(park1.list_patrons).to eq([charlie, taylor, jude])
     end
 end

@@ -10,7 +10,7 @@ class Park
         @admission = admission
         @vehicles_in_park = []
         @revenue = 0
-        @patrons = [].sort
+        @patrons = []
     end
 
     def add_vehicle(vehicle)
@@ -32,6 +32,12 @@ class Park
 
     def add_patron(patron)
         @patrons << patron
+    end
+
+    def list_patrons
+        patrons.map do |patron|
+            patron
+        end
     end
 
 end
