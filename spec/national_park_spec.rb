@@ -5,6 +5,8 @@ require './lib/national_park'
 
 RSpec.describe NationalPark do
     let(:park) {NationalPark.new("Carlsbad Caverns", 15)}
+    let(:vehicle) { Vehicle.new("2001", "Honda", "Civic") }
+
 
     it "exists" do
         expect(park).to be_instance_of(NationalPark)
@@ -15,6 +17,9 @@ RSpec.describe NationalPark do
         expect(park.admission_price).to eq(15)
     end
 
+    it "can list all vehicles that enter the park" do
+        expect(park.vehicles_in_park).to eq([])
+    end
 
 
 end
