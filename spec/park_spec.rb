@@ -86,8 +86,37 @@ RSpec.describe Park do
 
       park.add_vehicle(vehicle_1)
       park.add_vehicle(vehicle_2)
+      
+      expect(park.revenue_generated).to eq("$60.00")
+    end
+  end
 
-      expect(revenue_generated).to eq("$60.00")
+  describe '#calculate_revenue' do 
+    it 'calcultes the revenue and outputs a string' do 
+      park = Park.new("Zion National Park", 15.00) 
+
+      vehicle_1 = Vehicle.new("2001", "Honda", "Civic") 
+      vehicle_2 = Vehicle.new("2005", "Chevrolet", "Aveo")  
+
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+      jude = Passenger.new({"name" => "Jude", "age" => 20}) 
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+      cornelius = Passenger.new({"name" => "Cornelius", "age" => 50}) 
+      maud = Passenger.new({"name" => "Maud", "age" => 50}) 
+      beatrice = Passenger.new({"name" => "Beatrice", "age" => 10}) 
+
+      vehicle_1.add_passenger(charlie)  
+      vehicle_1.add_passenger(jude) 
+      vehicle_1.add_passenger(taylor) 
+
+      vehicle_2.add_passenger(cornelius)  
+      vehicle_2.add_passenger(maud) 
+      vehicle_2.add_passenger(beatrice) 
+
+      park.add_vehicle(vehicle_1)
+      park.add_vehicle(vehicle_2)
+
+      expect(park.calculate_revenue).to eq("60.0")
     end
   end
 end
