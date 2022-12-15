@@ -11,4 +11,14 @@ class Park
         @guest_vehicles << vehicle
     end
 
+    def list_all_passengers
+        passengers = []
+        @guest_vehicles.map do |vehicle|
+            vehicle.passengers.map do |passenger|
+                passengers << passenger.name
+            end
+        end
+        passengers
+    end
+
 end

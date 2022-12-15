@@ -24,9 +24,7 @@ RSpec.describe Park do
         expect(@park.guest_vehicles).to eq([@vehicle])
     end
 
-    xit "list_all_passengers" do
-        expect(@park.list_all_passengers).to eq([])
-
+    it "list_all_passengers" do
         charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
         jude = Passenger.new({"name" => "Jude", "age" => 20})
         taylor = Passenger.new({"name" => "Taylor", "age" => 12})
@@ -36,8 +34,8 @@ RSpec.describe Park do
         @vehicle.add_passenger(taylor)
 
         @park.new_guest(@vehicle)
-
-        expect(@park.list_all_passengers).to eq([charlie, jude, taylor])
+        require 'pry'; binding.pry
+        expect(@park.list_all_passengers).to eq(["Charlie", "Jude", "Taylor"])
     end
 
     xit "revenue" do
