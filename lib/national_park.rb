@@ -1,7 +1,8 @@
 class NationalPark
     attr_reader :name, 
                 :admission_price,
-                :vehicles_in_park
+                :vehicles_in_park, 
+                :revenue
 
     def initialize(name, admission_price)
         @name = name
@@ -22,7 +23,7 @@ class NationalPark
         all_passengers_in_park.flatten
     end
 
-    def revenue_generated
+    def charge_adults
         total_numb_adults = []
         
         @vehicles_in_park.each do |each_vehicle|

@@ -57,7 +57,9 @@ RSpec.describe NationalPark do
         park.enter(vehicle1)
         park.enter(vehicle2)
 
-        expect(park.revenue_generated).to eq(45)
+        park.charge_adults
+
+        expect(park.revenue).to eq(45)
     end
 
 
