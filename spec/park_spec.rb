@@ -149,4 +149,39 @@ RSpec.describe Park do
       expect(park.format_revenue).to eq("$60.00")
     end
   end
+
+  describe '#patron_list' do 
+    it 'has a list of all attendees including a list of adults and minors(in alphabetical order)' do 
+      park = Park.new("Zion National Park", 15.00) 
+
+      vehicle_1 = Vehicle.new("2001", "Honda", "Civic") 
+      vehicle_2 = Vehicle.new("2005", "Chevrolet", "Aveo")  
+
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+      jude = Passenger.new({"name" => "Jude", "age" => 20}) 
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+      cornelius = Passenger.new({"name" => "Cornelius", "age" => 50}) 
+      maud = Passenger.new({"name" => "Maud", "age" => 50}) 
+      beatrice = Passenger.new({"name" => "Beatrice", "age" => 10}) 
+
+      vehicle_1.add_passenger(charlie)  
+      vehicle_1.add_passenger(jude) 
+      vehicle_1.add_passenger(taylor) 
+
+      vehicle_2.add_passenger(cornelius)  
+      vehicle_2.add_passenger(maud) 
+      vehicle_2.add_passenger(beatrice) 
+
+      park.add_vehicle(vehicle_1)
+      park.add_vehicle(vehicle_2)
+
+      expected = {
+                    all_attendees: ["Beatrice", "Charlie", "Cornelius", "Jude", "Maud", "Taylor"],
+                    adults: ["Charlie", "Cornelius", "Jude", "Maud"],
+                    minors: ["Beatrice", "Taylor"]
+      }
+
+      expect(park.patron_list).to eq(expected)
+    end
+  end
 end
