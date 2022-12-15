@@ -13,7 +13,7 @@ RSpec.describe Park do
         expect(@park).to be_an_instance_of(Park)
     end
 
-    xit "name and admission" do
+    it "name and admission" do
         expect(@park.name).to eq("Sand Dunes")
         expect(@park.admission).to eq(25)
     end
