@@ -17,5 +17,10 @@ describe NationalPark do
     it '1. exists' do
       expect(@national_park).to be_a(NationalPark)
     end
+
+    it '2. has readable attributes' do
+      expect(@national_park.name).to eq("Arches")
+      expect(@national_park.fee).to eq(30)
+    end
   end
 end
