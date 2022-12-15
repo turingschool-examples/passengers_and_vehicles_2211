@@ -11,12 +11,12 @@ describe Park do
   end
 
   it 'has an admission price' do
-    park = Park.new("Yosemite", "$25")
+    park = Park.new("Yosemite", 25)
     expect(park.admission_price).to eq(25)
   end
 
   it 'has a list of vehicles' do
-    park = Park.new("Yosemite", "$25")
+    park = Park.new("Yosemite", 25)
     expect(park.vehicles).to eq([])
     vehicle1 = Vehicle.new("2002", "Honda", "CRV")
     vehicle2 = Vehicle.new("2004", "Volks", "Jetta")
@@ -28,7 +28,7 @@ describe Park do
   end
 
   it 'has a list of passengers' do
-    park = Park.new("Yosemite", "$25")
+    park = Park.new("Yosemite", 25)
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     mark = Passenger.new({"name" => "Mark", "age" => 6})
     julia = Passenger.new({"name" => "Julia", "age" => 41})
@@ -48,7 +48,7 @@ describe Park do
   end
 
   it 'can calculate revenue' do
-    park = Park.new("Yosemite", "$25")
+    park = Park.new("Yosemite", 25)
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     mark = Passenger.new({"name" => "Mark", "age" => 6})
     julia = Passenger.new({"name" => "Julia", "age" => 41})
