@@ -21,4 +21,18 @@ RSpec.describe Vehicle do
         @vehicle.speeding
         expect(@vehicle.speeding?).to eq(true)
     end
+
+    it "doesnt have passengers" do
+        expect(@vehicle.passenger).to eq([])
+    end
+
+    it "can have passengers" do 
+        charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+        jude = Passenger.new({"name" => "Jude", "age" => 20})
+        taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+
+        @vehicle.add_passenger(charlie)
+        @vehicle.add_passenger(jude)
+        @vehicle.add_passenger(taylor)
+    end
 end
