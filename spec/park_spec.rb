@@ -143,8 +143,7 @@ RSpec.describe Park do
       "Minors"=>["Atena", "BabyDiego", "Taylor"], 
       "Adults"=>["Charlie", "Diego", "Hady", "Jude", "Malena"]
       })
-
-
   end 
+
 end
 end 

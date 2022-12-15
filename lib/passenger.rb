@@ -5,15 +5,13 @@ class Passenger
     @name = information["name"]
     @age = information["age"]
     @can_drive = false 
-    
   end
 
   def adult? 
     if @age >= 18 
-      @adult = true 
-      else @adult = false
+       true 
+      else false
     end
-  return @adult
   end
 
   def driver? 
