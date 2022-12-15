@@ -24,4 +24,14 @@ RSpec.describe Passenger do
 
     end
   end
+
+  describe '#driver?' do 
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+
+    expect(charlie.driver?).to eq(false)
+
+    charlie.drive 
+
+    expect(charlie.driver).to eq(true)
+  end
 end
