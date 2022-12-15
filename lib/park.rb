@@ -22,7 +22,6 @@ class Park
     end
 
     def charge
-        # require 'pry'; binding.pry
         @revenue += @admission
     end
 
