@@ -2,7 +2,7 @@ require './lib/passenger.rb'
 
 describe Passenger do
 
-it "exsits" do
+it "exists" do
   charlie = Passenger.new({"name" => "Charlie", "age" => 18})
   expect(charlie).to be_an_instance_of(Passenger)
 end
@@ -26,13 +26,13 @@ end
 
 it "cannot drive by default" do
   charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-  expect(charlie.driver?). to eq(false)
+  expect(charlie.driver?).to eq(false)
 end
 
 it "can become a driver" do
   charlie = Passenger.new({"name" => "Charlie", "age" => 18})
   charlie.drive
-  expect(charlie.driver?). to eq(true)
+  expect(charlie.driver?).to eq(true)
 end
 
 
