@@ -14,6 +14,12 @@ describe Passenger do
       expect(charlie.age).to eq(18)
     end
 
+		it '#adult?' do
+
+      expect(charlie.adult?).to eq(true)
+      expect(taylor.adult?).to eq(false)
+    end
+
 	end
 
 end
