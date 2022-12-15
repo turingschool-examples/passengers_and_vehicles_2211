@@ -12,8 +12,10 @@ RSpec.describe Passenger do
 
     it "has atributes" do
         expect(charlie.name).to eq("Charlie")
-        expect(taylor.name).to eq("Taylor")
+        expect(charlie.age).to eq(18)
     end
+
+
 
 
 end
