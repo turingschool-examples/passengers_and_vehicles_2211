@@ -86,7 +86,7 @@ describe Park do
     park.add_vehicle(vehicle1)
     park.add_vehicle(vehicle2)
     
-    expect(park.abc_passenger_list).to eq([charlie, emily, jamal, julia, mark])
+    expect(park.abc_passenger_list).to eq(["Charlie", "Emily", "Jamal", "Julia", "Mark"])
   end
 
   it 'can list passengers by minors and adults' do
@@ -108,8 +108,8 @@ describe Park do
     park.add_vehicle(vehicle2)
 
     expect(park.minors_adults).to eq({
-      :minors => [emily, mark],
-      :adults => [charlie, jamal, julia]
+      :minors => ["Emily", "Mark"],
+      :adults => ["Charlie", "Jamal", "Julia"]
     })
   end
 
