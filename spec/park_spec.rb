@@ -47,7 +47,7 @@ describe Park do
         expect(glacier.park_goers).to eq([charlie, jude, taylor, tori, joe, meghan])
     end
 
-    xit 'can track revenue generated' do
+    it 'can track revenue generated' do
         vehicle_1.add_passenger(charlie)  
         vehicle_1.add_passenger(jude)
         vehicle_1.add_passenger(taylor) 

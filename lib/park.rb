@@ -16,4 +16,8 @@ class Park
             vehicle.passengers
         end.flatten
     end
+
+    def revenue
+        park_goers.length * @price
+    end
 end
