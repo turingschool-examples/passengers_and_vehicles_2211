@@ -26,16 +26,32 @@ class Park
 		attendees.map {|attendee| attendee.name}.sort
 	end
 
-	def list_of_minors_by_name
+	# I figured it was requested we return a list names of attendees
+	# but was unsure if it was objects. Methods for returning lists 
+	# of both names and objects were made.
+
+	def list_of_minors
     attendees.select {|attendee| !attendee.adult?}.map do |minor| 
 			minor
 		end.sort_by(&:name)
   end
 
-	def list_of_adults_by_name
+	def list_of_adults
     attendees.select {|attendee| attendee.adult?}.map do |adult| 
 			adult
 		end.sort_by(&:name)
+  end
+
+	def list_of_minors_by_name
+    attendees.select {|attendee| !attendee.adult?}.map do |minor| 
+			minor.name
+		end.sort
+  end
+
+	def list_of_adults_by_name
+    attendees.select {|attendee| attendee.adult?}.map do |adult| 
+			adult.name
+		end.sort
   end
 
 	def attendees
