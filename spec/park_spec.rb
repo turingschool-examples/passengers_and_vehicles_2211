@@ -6,9 +6,9 @@ require 'pry'
 
 RSpec.describe Park do
   it 'is a park and has attributes' do
-    yosemite = Park('Yosemite', 120)
+    canyonlands = Park.new('Canyonlands', 20)
     
-    expect(yosemite.name).to be("Yosemite")
-    expect(yosemite.price).be(120)
+    expect(canyonlands.name).to eq('Canyonlands')
+    expect(canyonlands.price).to eq(20)
   end
 end
