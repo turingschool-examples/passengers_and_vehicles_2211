@@ -1,8 +1,9 @@
 class NationalPark
-    attr_reader :name
+    attr_reader :name, :admission_price
 
-    def initialize(name)
+    def initialize(name, admission_price)
         @name = name
+        @admission_price = admission_price
     end
 
 
