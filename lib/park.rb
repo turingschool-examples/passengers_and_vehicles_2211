@@ -38,4 +38,43 @@ class Park
     return revenue
   end
 
+  def alphabetic_patrons_in_park 
+    patrons_by_name.sort
+  end
+
+  def minors_in_park 
+    minors = patrons_in_park.select do |patron|
+      patron.adult? == false 
+    end
+    alphabetized_minors = minors.sort_by do |minor|
+      minor.name 
+    end
+    minors_by_name = alphabetized_minors.map do |minor|
+      minor.name 
+    end
+    return minors_by_name
+  end
+
+  def adults_in_park 
+    adults = patrons_in_park.select do |patron|
+      patron.adult? == true 
+    end
+    alphabetized_adults = adults.sort_by do |adult|
+      adult.name 
+    end
+    adults_by_name = alphabetized_adults.map do |adult|
+      adult.name 
+    end
+    return adults_by_name
+  end
+
+  def full_functionality
+    hash_of_everyone = {}
+    hash_of_everyone["Everyone"] = alphabetic_patrons_in_park 
+    hash_of_everyone["Minors"] = minors_in_park
+    hash_of_everyone["Adults"] = adults_in_park 
+
+    return hash_of_everyone
+  end
+
 end

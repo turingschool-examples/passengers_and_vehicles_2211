@@ -105,5 +105,46 @@ RSpec.describe Park do
     expect(@cotopaxi.revenue_generated).to eq(249)
   end 
 
-  end
+  it "can generate an alphabetic list of all patrons in the park" do 
+
+    @chimborazo.admit_vehicle(@vehicle)
+    @chimborazo.admit_vehicle(@echo)
+    @chimborazo.admit_vehicle(@minivan)
+  
+    expect(@chimborazo.alphabetic_patrons_in_park).to eq(["Atena", "BabyDiego", "Charlie", "Diego", "Hady", "Jude", "Malena", "Taylor"]) 
+  end 
+
+  it "can generate an alphabetic list of all minors in the park" do 
+
+    @chimborazo.admit_vehicle(@vehicle)
+    @chimborazo.admit_vehicle(@echo)
+    @chimborazo.admit_vehicle(@minivan)
+  
+    expect(@chimborazo.minors_in_park).to eq(["Atena", "BabyDiego", "Taylor"]) 
+  end 
+
+  it "can generate an alphabetic list of all adults in the park" do 
+
+    @chimborazo.admit_vehicle(@vehicle)
+    @chimborazo.admit_vehicle(@echo)
+    @chimborazo.admit_vehicle(@minivan)
+  
+    expect(@chimborazo.adults_in_park).to eq(["Charlie", "Diego", "Hady", "Jude", "Malena"]) 
+  end 
+
+  it "can provide all of this information by running one method" do 
+
+    @chimborazo.admit_vehicle(@vehicle)
+    @chimborazo.admit_vehicle(@echo)
+    @chimborazo.admit_vehicle(@minivan)
+
+    expect(@chimborazo.full_functionality).to eq({
+      "Everyone"=>["Atena", "BabyDiego", "Charlie", "Diego", "Hady", "Jude", "Malena", "Taylor"], 
+      "Minors"=>["Atena", "BabyDiego", "Taylor"], 
+      "Adults"=>["Charlie", "Diego", "Hady", "Jude", "Malena"]
+      })
+
+
+  end 
+end
 end 
