@@ -33,15 +33,16 @@ describe Park do
         expect(glacier.vehicles).to eq([vehicle_1, vehicle_2, vehicle_3])
     end
 
-    xit 'can track passengers in park' do
+    it 'can track passengers in park' do
         vehicle_1.add_passenger(charlie)  
         vehicle_1.add_passenger(jude)
         vehicle_1.add_passenger(taylor) 
-
         vehicle_2.add_passenger(tori)  
         vehicle_2.add_passenger(joe)
-
         vehicle_3.add_passenger(meghan) 
+        glacier.track_vehicle(vehicle_1)
+        glacier.track_vehicle(vehicle_2)
+        glacier.track_vehicle(vehicle_3)
 
         expect(glacier.park_goers).to eq([charlie, jude, taylor, tori, joe, meghan])
     end
