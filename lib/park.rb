@@ -22,9 +22,9 @@ class Park
 		revenue
 	end
 
-	def list_all_attendees
-		attendees = @vehicles_entered.collect {|vehicle| vehicle.passengers}
-		attendees.flatten.sort_by(&:name)
+	def list_all_attendees_by_name
+		attendees = @vehicles_entered.flat_map {|vehicle| vehicle.passengers}
+		attendees.map {|attendee| attendee.name}.sort
 	end
 
 end

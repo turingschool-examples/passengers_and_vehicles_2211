@@ -7,7 +7,7 @@ describe Park do
 	let(:charlie) {Passenger.new({"name" => "Charlie", "age" => 18})}
   let(:jude) {Passenger.new({"name" => "Jude", "age" => 20})}
   let(:taylor) {Passenger.new({"name" => "Taylor", "age" => 12})}
-	  let(:rudy) {Passenger.new({"name" => "Rudy", "age" => 32})}
+	let(:rudy) {Passenger.new({"name" => "Rudy", "age" => 32})}
   let(:tonya) {Passenger.new({"name" => "Tonya", "age" => 17})}
   let(:vehicle) {Vehicle.new("2001", "Honda", "Civic")}
 	let(:park) {Park.new({name: "Olympic National Park", admission_price: 10})}
@@ -70,9 +70,8 @@ describe Park do
 			park.admit_vehicle(vehicle)
 			park.admit_vehicle(vehicle_two)
 
-			expect(park.list_all_attendees).to eq([charlie, jude, rudy, taylor, tonya])
+			expect(park.list_all_attendees_by_name).to eq(["Charlie", "Jude", "Rudy", "Taylor", "Tonya"])
 		end
-
 
 
 	end
