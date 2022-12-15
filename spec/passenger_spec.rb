@@ -21,9 +21,9 @@ RSpec.describe Passenger do
         expect(@taylor.adult?).to eq(false)
     end
 
-    xit "drive and driver?" do
+    it "drive and driver?" do
         expect(@charlie.driver?).to eq(false)
-        charlie.drive
+        @charlie.drive
         expect(@charlie.driver?).to eq(true)
     end
 end
