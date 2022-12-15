@@ -18,7 +18,7 @@ RSpec.describe Park do
         expect(@park.admission).to eq(25)
     end
 
-    xit "guest_vehicles" do
+    it "guest_vehicles" do
         expect(@park.guest_vehicles).to eq([])
         @park.new_guest(@vehicle)
         expect(@park.guest_vehicles).to eq([@vehicle])
