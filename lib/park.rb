@@ -19,4 +19,20 @@ class Park
     end.flatten
   end
 
+  def revenue_generated 
+    calculate_revenue
+    format_revenue
+  end
+
+  def calculate_revenue 
+     revenue = @vehicles.sum do |vehicle|
+      (vehicle.num_adults * @admission_price).round(2)
+    end.to_s
+  end
+
+  def format_revenue 
+    format = sprintf("%.2f", calculate_revenue)
+    format.reverse.concat("$").reverse
+  end
+
 end
