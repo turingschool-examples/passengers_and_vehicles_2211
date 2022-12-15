@@ -3,6 +3,7 @@ class Passenger
   
   def initialize(details)
     @details = details
+    @adult = adult
   end
 
   def name
@@ -10,6 +11,6 @@ class Passenger
   end
 
   def age
-    @detals['age']
+    @details['age']
   end
 end
