@@ -45,7 +45,6 @@ class Park
     end
    ordered_list[:minors]= ordered_list[:minors].map{ |passenger| passenger.name }.sort
    ordered_list[:adults]= ordered_list[:adults].map{ |passenger| passenger.name }.sort
-   require 'pry'; binding.pry
    ordered_list
   end
 end
