@@ -2,6 +2,7 @@ require './lib/vehicle'
 # => true
 require './lib/passenger'
 # => true
+
 p vehicle = Vehicle.new("2001", "Honda", "Civic") 
 puts   
 # => #<Vehicle:0x00007fe0da9c63d8...>
