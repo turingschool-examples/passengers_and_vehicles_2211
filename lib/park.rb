@@ -16,7 +16,7 @@ class Park
 
 	def generate_revenue
 		revenue = 0
-		@vehicles_entered.each do |vehicle|
+		@vehicles_entered.map do |vehicle|
 			revenue += vehicle.num_adults * @admission_price
 		end
 		revenue
