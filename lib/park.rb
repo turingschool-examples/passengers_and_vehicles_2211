@@ -19,4 +19,12 @@ class Park
   def revenue
     @price * @visitors.count
   end
+
+  def list_patrons_by_name
+    names = []
+    @visitors.each do |visitor|
+      names << visitor.name
+    end
+    names.sort
+  end
 end
