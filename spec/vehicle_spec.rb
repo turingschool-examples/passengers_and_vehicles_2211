@@ -17,10 +17,10 @@ RSpec.describe Vehicle do
         expect(@vehicle.model).to eq("Civic")
     end
 
-    xit "speed and speeding?" do
-        expect(@vehicle.speeing?).to eq(false)
+    it "speed and speeding?" do
+        expect(@vehicle.speeding?).to eq(false)
         @vehicle.speed
-        expect(@vehicle.speeing?).to eq(true)
+        expect(@vehicle.speeding?).to eq(true)
     end
 
     xit "passengers" do
