@@ -15,6 +15,15 @@ RSpec.describe Passenger do
       expect(vehicle.model).to eq('Civic')
     end
 
+    it '3. can be checked for speeding' do
+      expect(vehicle.speeding?).to eq(false)
+
+      vechicle.speed
+      
+      expect(vehicle.speeding?).to eq(true)
+    end
+
+
 
 
   end
