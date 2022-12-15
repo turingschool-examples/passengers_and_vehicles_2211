@@ -23,7 +23,7 @@ class Vehicle
   def passengers
     @passengers
   end
-  
+
   def add_passenger(passenger)
     @passengers.push(passenger)
   end
