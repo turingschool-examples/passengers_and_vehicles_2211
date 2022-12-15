@@ -26,7 +26,7 @@ end
 
 it "cannot drive by default" do
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-    expect(charlie.drive). to eq(false)
+    expect(charlie.driver?). to eq(false)
 end
 
 
