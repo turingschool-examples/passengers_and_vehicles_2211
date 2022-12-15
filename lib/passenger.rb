@@ -1,9 +1,8 @@
 class Passenger
-  attr_reader :name, :age, :adult, :driver
+  attr_reader :name, :age, :driver
   def initialize(attributes)
     @name = attributes.fetch("name")
     @age = attributes.fetch("age")
-    @adult = false
     @driver = false
   end
 
