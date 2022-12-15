@@ -30,4 +30,10 @@ class Park
         currently_in_park * entry_fee
     end
 
+    def patrons
+       patron_list = @passengers_in_park.map do |passenger|
+        passenger.name
+        end
+        patron_list.sort
+    end
 end

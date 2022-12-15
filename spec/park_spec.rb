@@ -7,6 +7,7 @@ let(:park) {Park.new("Yellowstone")}
 let(:vehicle) {Vehicle.new("2001", "Honda", "Civic")} 
 let(:jude) {Passenger.new({"name" => "Jude", "age" => 20})}
 let(:taylor) {Passenger.new({"name" => "Taylor", "age" => 12})}
+let(:charlie) {Passenger.new({"name" => "Charlie", "age" => 18})}
 
     it 'exists' do
         expect(park).to be_an_instance_of(Park)
@@ -50,6 +51,13 @@ let(:taylor) {Passenger.new({"name" => "Taylor", "age" => 12})}
         park.passenger_enter(taylor)
         park.charge_fee
         expect(park.revenue).to eq(30)
+    end
 
+    it 'tracks patrons of the park' do
+        park.passenger_enter(jude)
+        park.passenger_enter(taylor)
+        park.passenger_enter(charlie)
+
+        expect(park.patrons).to eq(["Charlie", "Jude", "Taylor"])
     end
 end
