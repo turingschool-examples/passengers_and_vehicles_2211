@@ -6,4 +6,8 @@ class Passenger
     @age = attributes["age"]
   end
 
+  def adult? 
+    @age >= 18
+  end
+
 end
