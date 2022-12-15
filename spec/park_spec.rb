@@ -79,20 +79,20 @@ describe Park do
 
 		it 'can list all minors' do
 
-      expect(park.list_of_minors_by_name).to eq(["Taylor", "Tonya"])
+      expect(park.list_of_minors_by_name).to eq([taylor, tonya])
 
     end
 
 		it 'can list all adults' do
 
-      expect(park.list_of_adults_by_name).to eq(["Charlie", "Jude", "Rudy"])
+      expect(park.list_of_adults_by_name).to eq([charlie, jude, rudy])
 
     end
 
 		it 'can list attendees HELPER METHOD' do
 
       expect(park.attendees).to eq([charlie, jude, taylor, rudy, tonya])
-			
+
     end
 
 	end
