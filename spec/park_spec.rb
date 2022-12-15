@@ -23,18 +23,23 @@ RSpec.describe Park do
       expect(park.vehicles).to eq([])
     end
 
-    it "can add vehicles" do
+    it "can add and list all vehicles in park" do
+      park.add_vehicle(sedan)
+      park.add_vehicle(truck)
+
+      expect(park.vehicles).to eq([sedan, truck])
+    end
+
+    it "can list all passengers in park" do
       sedan.add_passenger(charlie)
       sedan.add_passenger(taylor)
       truck.add_passenger(jude)
       truck.add_passenger(mary)
 
       park.add_vehicle(sedan)
-      park.add_vehicle(truck)
-
-      expect(park.vehicles).to eq([sedan, truck])
-      expect(park.vehicles.last.passengers).to eq([jude, mary])
-    end
-    
+      park.add_vehicle(truck) 
+      
+      expect(park.list_all_passengers).to eq([charlie, taylor, jude, mary])
+    end  
   end
 end
