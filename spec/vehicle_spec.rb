@@ -44,6 +44,6 @@ describe Vehicle do
     vehicle.add_passenger(jude)
     vehicle.add_passenger(taylor)
 
-    expect(vehicle.num_adults).to eq (2)
+    expect(vehicle.num_adults).to eq(2)
   end
 end
