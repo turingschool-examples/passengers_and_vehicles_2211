@@ -4,7 +4,6 @@ class Park
                 :vehicles_in_park, 
                 :revenue,
                 :patrons
-
     def initialize(name, admission)
         @name = name
         @admission = admission

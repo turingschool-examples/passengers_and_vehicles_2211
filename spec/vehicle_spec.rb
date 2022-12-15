@@ -7,8 +7,6 @@ RSpec.describe Vehicle do
     let(:jude) { Passenger.new({"name" => "Jude", "age" => 20})}
     let(:taylor) { Passenger.new({"name" => "Taylor", "age" => 12})}
 
-
-
     it 'has a year, make and model' do
         expect(vehicle.year).to eq("2001")
         expect(vehicle.make).to eq("Honda")
