@@ -10,4 +10,10 @@ class Park
     def track_vehicle(vehicle)
         @vehicles << vehicle
     end
+
+    def park_goers
+        @vehicles.map do |vehicle|
+            vehicle.passengers
+        end.flatten
+    end
 end
