@@ -2,7 +2,6 @@ class Park
 	attr_reader :name,
 							:admission_price,
 							:vehicles_in_park
-							
 	def initialize(name, admission)
 		@name = name
 		@admission_price = admission
