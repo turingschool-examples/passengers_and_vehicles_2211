@@ -47,4 +47,12 @@ class Park
    ordered_list[:adults]= ordered_list[:adults].sort_by{|passenger| passenger.name}
    ordered_list
   end
+
+  def minors_list
+    minors_adults[:minors]
+  end
+
+  def adults_list
+    minors_adults[:adults]
+  end
 end
