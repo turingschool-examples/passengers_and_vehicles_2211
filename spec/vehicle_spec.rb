@@ -23,7 +23,7 @@ RSpec.describe Vehicle do
   it 'can add passengers to the vehcile' do
     vehicle = Vehicle.new("2001", "Honda", "Civic")
 
-    expect(vehcile.passengers).to eq([])
+    expect(vehicle.passengers).to eq([])
 
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     jude = Passenger.new({"name" => "Jude", "age" => 20})
@@ -31,7 +31,7 @@ RSpec.describe Vehicle do
     vehicle.add_passenger(charlie)
     vehicle.add_passenger(jude)
     vehicle.add_passenger(taylor)
-
-    expect(vehcile.passengers).to eq(charlie, jude, taylor)
+    
+    expect(vehicle.passengers).to eq([charlie, jude, taylor])
   end
 end
