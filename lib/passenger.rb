@@ -1,9 +1,10 @@
 class Passenger
-  attr_reader :details, :adult
+  attr_reader :details, :adult, :driver
   
   def initialize(details)
     @details = details
     @adult = nil
+    @driver = false
   end
 
   def name
@@ -22,4 +23,11 @@ class Passenger
     end
   end
 
+  def drive
+    @driver = true
+  end
+
+  def driver?
+    @driver
+  end
 end

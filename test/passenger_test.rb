@@ -30,13 +30,5 @@ RSpec.describe Passenger do
       
       expect(charlie.driver?).to eq(true)
     end
-
-#  charlie.driver?
-# # => false
-
-#  
-
-#  charlie.driver?
-# # => true
   end
 end
