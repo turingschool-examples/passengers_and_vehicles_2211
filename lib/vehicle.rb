@@ -25,6 +25,6 @@ class Vehicle
   end
 
   def num_adults
-    @passengers.count { |passenger| passenger.adult? == true }
+    @passengers.count { |passenger| passenger.adult? }
   end
 end
