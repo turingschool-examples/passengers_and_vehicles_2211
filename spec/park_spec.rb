@@ -23,7 +23,7 @@ describe Park do
         expect(glacier.price).to eq(35)
     end
 
-    xit 'can track vehicles entered' do
+    it 'can track vehicles entered' do
         expect(glacier.vehicles).to eq([])
         
         glacier.track_vehicle(vehicle_1)

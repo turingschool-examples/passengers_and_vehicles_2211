@@ -6,4 +6,8 @@ class Park
         @price = price
         @vehicles = []
     end
+
+    def track_vehicle(vehicle)
+        @vehicles << vehicle
+    end
 end
