@@ -17,21 +17,31 @@ class NationalPark
 
     def passengers_in_park
         all_passengers_in_park = []
-        @vehicles_in_park.each do |vehicle|
+        @vehicles_in_park.map do |vehicle|
             all_passengers_in_park << vehicle.passengers
         end
         all_passengers_in_park.flatten
-    end
-
-    def charge_adults
-        total_numb_adults = []
         
-        @vehicles_in_park.each do |each_vehicle|
-            total_numb_adults << each_vehicle.num_adults
-        end
-         
-        daily_rev = total_numb_adults.sum * @admission_price 
-        @revenue = daily_rev
     end
 
+    # def charge_adults
+    #     total_numb_adults = []
+        
+    #     @vehicles_in_park.each do |each_vehicle|
+    #         total_numb_adults << each_vehicle.num_adults
+    #     end
+         
+    #     daily_rev = total_numb_adults.sum * @admission_price 
+    #     @revenue = daily_rev
+    # end
+
+    def charge_adults_nested_arrays
+        @vehicles_in_park.each do |each_vehicle|
+            each_vehicle.passengers.each do |passenger|
+                if passenger.age >= 18 == true
+                    @revenue += @admission_price
+                end
+            end
+        end
+    end
 end

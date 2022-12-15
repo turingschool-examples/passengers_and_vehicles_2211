@@ -57,10 +57,10 @@ RSpec.describe NationalPark do
         park.enter(vehicle1)
         park.enter(vehicle2)
 
-        park.charge_adults
+        park.charge_adults_nested_arrays
 
         expect(park.revenue).to eq(45)
     end
 
-
+    
 end
