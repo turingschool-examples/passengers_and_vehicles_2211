@@ -8,4 +8,5 @@ class Vehicle
     @make = make 
     @model = model
   end
+  
 end
