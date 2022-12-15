@@ -19,4 +19,8 @@ class Vehicle
   def speeding? 
     @speeding
   end
+
+  def add_passenger(passenger)
+    @passengers << passenger
+  end
 end
