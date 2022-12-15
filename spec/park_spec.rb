@@ -10,5 +10,8 @@ RSpec.describe Vehicle do
     let(:jude) { Passenger.new({"name" => "Jude", "age" => 20})}
     let(:taylor) { Passenger.new({"name" => "Taylor", "age" => 12})}
 
-    
+    it "has attributes" do
+        expect(park1.name).to eq("Jurrasic")
+        expect(park1.admission).to eq(5)
+    end
 end
