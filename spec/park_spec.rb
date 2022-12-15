@@ -59,7 +59,7 @@ describe Park do
 
 		let(:vehicle_two) {Vehicle.new("2003", "Toyota", "4Runner")}
 
-		it 'can list names of all attendees alphabetically' do
+		before do
 
 			vehicle.add_passenger(charlie)
       vehicle.add_passenger(jude)
@@ -70,49 +70,29 @@ describe Park do
 			park.admit_vehicle(vehicle)
 			park.admit_vehicle(vehicle_two)
 
+		end
+		it 'can list names of all attendees alphabetically' do
+
 			expect(park.list_all_attendees_by_name).to eq(["Charlie", "Jude", "Rudy", "Taylor", "Tonya"])
+
 		end
 
 		it 'can list all minors' do
 
-      vehicle.add_passenger(charlie)
-      vehicle.add_passenger(jude)
-      vehicle.add_passenger(taylor)
-      vehicle_two.add_passenger(rudy)
-      vehicle_two.add_passenger(tonya)
-
-      park.admit_vehicle(vehicle)
-      park.admit_vehicle(vehicle_two)
-
       expect(park.list_of_minors_by_name).to eq(["Taylor", "Tonya"])
+
     end
 
 		it 'can list all adults' do
 
-      vehicle.add_passenger(charlie)
-      vehicle.add_passenger(jude)
-      vehicle.add_passenger(taylor)
-      vehicle_two.add_passenger(rudy)
-      vehicle_two.add_passenger(tonya)
-
-      park.admit_vehicle(vehicle)
-      park.admit_vehicle(vehicle_two)
-
       expect(park.list_of_adults_by_name).to eq(["Charlie", "Jude", "Rudy"])
+
     end
 
 		it 'can list attendees HELPER METHOD' do
 
-      vehicle.add_passenger(charlie)
-      vehicle.add_passenger(jude)
-      vehicle.add_passenger(taylor)
-      vehicle_two.add_passenger(rudy)
-      vehicle_two.add_passenger(tonya)
-
-      park.admit_vehicle(vehicle)
-      park.admit_vehicle(vehicle_two)
-
       expect(park.attendees).to eq([charlie, jude, taylor, rudy, tonya])
+			
     end
 
 	end
