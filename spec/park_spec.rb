@@ -33,7 +33,7 @@ RSpec.describe Park do
       park.add_vehicle(truck)
 
       expect(park.vehicles).to eq([sedan, truck])
-      expect(park.vehicles.passengers.last).to eq([taylor, mary])
+      expect(park.vehicles.last.passengers).to eq([jude, mary])
     end
     
   end
