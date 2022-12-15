@@ -100,7 +100,21 @@ describe Park do
 
       expect(park.list_of_adults_by_name).to eq(["Charlie", "Jude", "Rudy"])
     end
-		
+
+		it 'can list attendees HELPER METHOD' do
+
+      vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
+      vehicle_two.add_passenger(rudy)
+      vehicle_two.add_passenger(tonya)
+
+      park.admit_vehicle(vehicle)
+      park.admit_vehicle(vehicle_two)
+
+      expect(park.attendees).to eq([charlie, jude, taylor, rudy, tonya])
+    end
+
 	end
 
 end

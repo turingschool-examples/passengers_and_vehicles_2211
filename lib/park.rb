@@ -23,18 +23,19 @@ class Park
 	end
 
 	def list_all_attendees_by_name
-		attendees = @vehicles_entered.flat_map {|vehicle| vehicle.passengers}
 		attendees.map {|attendee| attendee.name}.sort
 	end
 
 	def list_of_minors_by_name
-		attendees = @vehicles_entered.flat_map {|vehicle| vehicle.passengers}
     attendees.select {|attendee| !attendee.adult?}.map {|minor| minor.name}.sort
   end
 
 	def list_of_adults_by_name
-		attendees = @vehicles_entered.flat_map {|vehicle| vehicle.passengers}
     attendees.select {|attendee| attendee.adult?}.map {|adult| adult.name}.sort
+  end
+
+	def attendees
+    @vehicles_entered.flat_map {|vehicle| vehicle.passengers}
   end
 
 end
