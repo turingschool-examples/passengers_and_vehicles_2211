@@ -4,9 +4,11 @@ require './lib/vehicle'
 
 RSpec.describe 'Passenger and Vehicles Spec Harness' do
   before(:each) do
-    @vehicle = Vehicle.new("2001", "Honda", "Civic")
-    @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-    @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+    @vehicle  = Vehicle.new("2001", "Honda", "Civic")
+    @vehicle2 = Vehicle.new("2021", "Toyota", "4Runner")
+    @charlie  = Passenger.new({"name" => "Charlie", "age" => 18})
+    @taylor   = Passenger.new({"name" => "Taylor", "age" => 12})
+    @park     = Park.new('Yosemite', 25)
   end
 
   describe 'Iteration 1' do 
@@ -80,6 +82,107 @@ RSpec.describe 'Passenger and Vehicles Spec Harness' do
       @vehicle.add_passenger(jude)
       
       expect(@vehicle.num_adults).to eq(2)
+    end
+  end
+  
+  describe 'Iteration 3' do 
+    it '11. exists and has attributes' do 
+      expect(Park).to respond_to(:new).with(2).argument
+
+      expect(@park).to be_a(Park)
+      expect(@park.name).to eq('Yosemite')
+      expect(@park.price).to eq(25)
+    end
+
+    it '12. can list all vehicles that entered the park' do
+      expect(@park.vehicles).to eq([])
+
+      @park.add_vehicle(@vehicle)
+      @park.add_vehicle(@vehicle2)
+
+      expect(@park.vehicles).to eq([@vehicle, @vehicle2])
+    end
+
+    it '13. can list all passengers that entered the park' do 
+      stephen  = Passenger.new({"name" => "Stephen", "age" => 22})
+      lucy  = Passenger.new({"name" => "Lucy", "age" => 23})
+
+      @park.add_vehicle(@vehicle)
+      @park.add_vehicle(@vehicle2)
+
+      @vehicle.add_passenger(lucy)
+      @vehicle.add_passenger(@charlie)
+
+      @vehicle2.add_passenger(@taylor)
+      @vehicle2.add_passenger(stephen)
+
+      expect(@park.passengers).to eq([lucy, @charlie, @taylor, stephen])
+    end
+
+    it '14. can calculate revenue generated' do
+      stephen  = Passenger.new({"name" => "Stephen", "age" => 22})
+      lucy  = Passenger.new({"name" => "Lucy", "age" => 23})
+
+      @park.add_vehicle(@vehicle)
+      @park.add_vehicle(@vehicle2)
+
+      @vehicle.add_passenger(lucy)
+      @vehicle.add_passenger(@charlie)
+
+      @vehicle2.add_passenger(taylor)
+      @vehicle2.add_passenger(@stephen)
+
+      expect(@park.revenue).to eq(75)
+    end
+  end
+
+  describe 'Iteration 4' do 
+    it '15. can get a list of all attendees names sorted alphabetically' do 
+      stephen  = Passenger.new({"name" => "Stephen", "age" => 22})
+      lucy  = Passenger.new({"name" => "Lucy", "age" => 23})
+
+      @park.add_vehicle(@vehicle)
+      @park.add_vehicle(@vehicle2)
+
+      @vehicle.add_passenger(lucy)
+      @vehicle.add_passenger(@charlie)
+
+      @vehicle2.add_passenger(@taylor)
+      @vehicle2.add_passenger(stephen)
+
+      expect(@park.attendees_list).to eq(["Charlie", "Lucy", "Stephen", "Taylor"])
+    end
+
+    it '16. can get a list of minors sorted alphabetically' do 
+      stephen  = Passenger.new({"name" => "Stephen", "age" => 22})
+      lucy  = Passenger.new({"name" => "Lucy", "age" => 23})
+
+      @park.add_vehicle(@vehicle)
+      @park.add_vehicle(@vehicle2)
+
+      @vehicle.add_passenger(lucy)
+      @vehicle.add_passenger(@charlie)
+
+      @vehicle2.add_passenger(@taylor)
+      @vehicle2.add_passenger(stephen)
+
+      expect(@park.minors_list).to eq(["Taylor"])
+    end
+
+    it '17. can get a list of adults sorted alphabetically' do 
+      stephen  = Passenger.new({"name" => "Stephen", "age" => 22})
+      lucy  = Passenger.new({"name" => "Lucy", "age" => 23})
+
+      @park.add_vehicle(@vehicle)
+      @park.add_vehicle(@vehicle2)
+
+      @vehicle.add_passenger(lucy)
+      @vehicle.add_passenger(@charlie)
+
+      @vehicle2.add_passenger(@taylor)
+      @vehicle2.add_passenger(stephen)
+
+      expect(@park.adults_list).to eq(["Charlie", "Lucy", "Stephen"])
     end
   end
 end
