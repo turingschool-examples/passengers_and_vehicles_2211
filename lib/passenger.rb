@@ -6,4 +6,11 @@ class Passenger
         @name = info["name"]
         @age = info["age"]
     end
+
+    def adult?
+        @age > 17
+    end
+
+    def 
+
 end
