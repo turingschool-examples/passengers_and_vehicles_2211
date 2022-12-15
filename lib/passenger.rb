@@ -4,4 +4,12 @@ class Passenger
   def initialize(details)
     @details = details
   end
+
+  def name
+    @details['name']
+  end
+
+  def age
+    @detals['age']
+  end
 end
