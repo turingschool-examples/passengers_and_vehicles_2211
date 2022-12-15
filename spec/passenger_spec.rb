@@ -11,7 +11,7 @@ describe Passenger do
     
   it'has attributes' do
     expect(charlie.name).to eq('Charlie')
-    expect(charlie.age).to eq (18)
+    expect(charlie.age).to eq(18)
   end
 
   it 'can determine if the passenger is an adult' do
