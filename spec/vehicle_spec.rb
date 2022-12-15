@@ -2,7 +2,7 @@ require './lib/passenger'
 require './lib/vehicle'
 
 describe Vehicle do
-  let (:vehicle) {Vehicle.new('2001', 'Honda', 'Civic')}
+  let(:vehicle) {Vehicle.new('2001', 'Honda', 'Civic')}
   let(:charlie) {Passenger.new({'name' => 'Charlie', 'age' => 18})}
   let(:taylor) {Passenger.new({'name' => 'Taylor', 'age' => 12})}
   let(:jude) {Passenger.new({'name' => 'Jude', 'age' => 20})}
