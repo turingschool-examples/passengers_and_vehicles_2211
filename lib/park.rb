@@ -11,4 +11,12 @@ class Park
     @vehicles << vehicle
   end
 
+  def visitors 
+    @vehicles.map do |vehicle| 
+      vehicle.passengers.map do |passenger|
+        passenger
+      end
+    end.flatten
+  end
+
 end
