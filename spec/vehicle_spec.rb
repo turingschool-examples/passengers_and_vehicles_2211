@@ -23,7 +23,7 @@ RSpec.describe Vehicle do
         expect(@vehicle.speeding?).to eq(true)
     end
 
-    xit "passengers" do
+    it "passengers" do
         expect(@vehicle.passengers).to eq([])
 
         charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
@@ -34,7 +34,7 @@ RSpec.describe Vehicle do
         @vehicle.add_passenger(jude)
         @vehicle.add_passenger(taylor)
 
-        # expect(@vehicle.passengers).to eq([]) names instead?
+        expect(@vehicle.passengers).to eq([charlie, jude, taylor])
     end
 
     xit "num_adults" do
