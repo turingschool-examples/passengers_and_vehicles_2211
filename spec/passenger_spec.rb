@@ -11,7 +11,7 @@ RSpec.describe Passenger do
         expect(@charlie).to be_an_instance_of(Passenger)
     end
 
-    xit "has name and age" do
+    it "has name and age" do
         expect(@charlie.name).to eq("Charlie")
         expect(@charlie.age).to eq(18)
     end
