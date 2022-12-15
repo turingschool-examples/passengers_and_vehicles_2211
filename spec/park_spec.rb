@@ -45,6 +45,6 @@ RSpec.describe do
 
 		park.add_vehicle(vehicle1)
 
-		expect(park.calculate_rev).to eq(40)
+		expect(park.calculate_rev(vehicle1)).to eq(40)
 	end
 end
