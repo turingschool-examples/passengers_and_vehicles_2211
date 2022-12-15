@@ -38,8 +38,8 @@ class Park
     end
 
     def minors
-        minors = park_goers.find_all do |passenger|
-            !passenger.adult?
+        minors = park_goers.reject do |passenger|
+            passenger.adult?
         end
 
         minors.map do |minor|
