@@ -5,16 +5,16 @@ RSpec.describe Passenger do
   let(:taylor) { Passenger.new({'name' => 'Taylor', 'age' => 12}) }
   
   describe 'Iteration1' do
-    xit '1. exists' do
+    it '1. exists' do
       expect(charlie).to be_a(Passenger)
       expect(taylor).to be_a(Passenger)
     end
 
-    xit '2. has a name' do
+    it '2. has a name' do
       expect(charlie.name).to eq('Charlie')
     end
 
-    xit '3. has an age' do
+    it '3. has an age' do
       expect(charlie.age).to eq(18)
     end
 
