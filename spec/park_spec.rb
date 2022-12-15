@@ -11,6 +11,7 @@ describe Park do
   let(:taylor) {Passenger.new({'name' => 'Taylor', 'age' => 12})}
   let(:jude) {Passenger.new({'name' => 'Jude', 'age' => 20})}
   let(:ivan) {Passenger.new({'name' => 'Ivan', 'age' => 36})}
+  let(:hailey) {Passenger.new({'name' => 'Hailey', 'age' => 1})}
 
   it 'exists' do
     expect(park).to be_a(Park)
@@ -70,5 +71,19 @@ describe Park do
     vehicle_3.add_passenger(ivan)
 
     expect(park.attendee_names).to eq(['Charlie', 'Ivan', 'Jude', 'Taylor'])
+  end
+
+  it 'can list the names of attendees who are minors' do
+    park.add_vehicle(vehicle_1)
+    park.add_vehicle(vehicle_2)
+    park.add_vehicle(vehicle_3)
+    
+    vehicle_1.add_passenger(charlie)
+    vehicle_2.add_passenger(taylor)
+    vehicle_2.add_passenger(jude)
+    vehicle_3.add_passenger(ivan)
+    vehicle_3.add_passenger(hailey)
+
+    expect(park.attendee_minors).to eq (['Hailey', 'Taylor'])
   end
 end
