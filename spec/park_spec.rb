@@ -32,6 +32,6 @@ RSpec.describe Park do
     vehicle.add_passenger(taylor)
     canyonlands.admit_vehicle(vehicle)
 
-    expect(canyonlands.visitors).to eq([charlie, june, taylor])
+    expect(canyonlands.visitors).to include([charlie, jude, taylor])
   end
 end
