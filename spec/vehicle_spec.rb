@@ -30,4 +30,8 @@ RSpec.describe Vehicle do
 		expect(vehicle.speeding?).to eq(true)
 	end
 
+	it "has no passengers by default" do 
+		expect(vehicle.passengers).to eq([])
+	end
+
 end
