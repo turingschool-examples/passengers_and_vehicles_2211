@@ -34,4 +34,10 @@ class Vehicle
 # but went with this just to at least have that done.
 # If I dont have time to come back to this I would love to see
 # How you would do it. 
+
+# def add_adult
+#   if vehicle.passengers 
+# end
+# vehicle.passengers[0].age
+# => 18
 end
