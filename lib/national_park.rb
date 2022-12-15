@@ -20,4 +20,6 @@ class NationalPark
     end
     passengers.flatten
   end
+
+  
 end
