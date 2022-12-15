@@ -45,4 +45,44 @@ RSpec.describe Park do
 
     expect(park.list_all_passengers).to eq([charlie, taylor, jude, kutter])
   end
+
+  it 'can calculate revenue by adult ticket sales' do
+    honda.add_passenger(charlie)
+    honda.add_passenger(taylor)
+    toyata.add_passenger(jude)
+    ford.add_passenger(kutter)
+
+    park.add_vehicle(honda)
+    park.add_vehicle(toyata)
+    park.add_vehicle(ford)
+   
+    park.calculate_revenue
+    expect(park.revenue).to eq(90)
+  end
+
+  it "can list the names of all vistors" do
+    honda.add_passenger(charlie)
+    honda.add_passenger(taylor)
+    toyata.add_passenger(jude)
+    ford.add_passenger(kutter)
+
+    park.add_vehicle(honda)
+    park.add_vehicle(toyata)
+    park.add_vehicle(ford)
+
+    expect(park.list_vistors_by_name).to eq(["Charlie", "Taylor", "Jude", "Kutter"])
+  end
+
+  it "can list all adult vistors" do
+    honda.add_passenger(charlie)
+    honda.add_passenger(taylor)
+    toyata.add_passenger(jude)
+    ford.add_passenger(kutter)
+
+    park.add_vehicle(honda)
+    park.add_vehicle(toyata)
+    park.add_vehicle(ford)
+
+    expect(park.list_of_adults).to eq(["Charlie", "Jude", "Kutter"])
+  end
 end
