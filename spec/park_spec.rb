@@ -84,7 +84,7 @@ describe Park do
     vehicle_3.add_passenger(ivan)
     vehicle_3.add_passenger(hailey)
 
-    expect(park.attendee_minors).to eq(['Hailey', 'Taylor'])
+    expect(park.names_attendee_minors).to eq(['Hailey', 'Taylor'])
   end
 
   it 'can list the names of attendees who are adults' do
@@ -98,6 +98,34 @@ describe Park do
     vehicle_3.add_passenger(ivan)
     vehicle_3.add_passenger(hailey)
 
-    expect(park.attendee_adults).to eq(['Charlie', 'Ivan', 'Jude'])
+    expect(park.names_attendee_adults).to eq(['Charlie', 'Ivan', 'Jude'])
+  end
+
+  it 'can list attendees who are minors' do
+    park.add_vehicle(vehicle_1)
+    park.add_vehicle(vehicle_2)
+    park.add_vehicle(vehicle_3)
+    
+    vehicle_1.add_passenger(charlie)
+    vehicle_2.add_passenger(taylor)
+    vehicle_2.add_passenger(jude)
+    vehicle_3.add_passenger(ivan)
+    vehicle_3.add_passenger(hailey)
+
+    expect(park.attendee_minors).to eq([hailey, taylor])
+  end
+
+  it 'can list attendees who are adults' do
+    park.add_vehicle(vehicle_1)
+    park.add_vehicle(vehicle_2)
+    park.add_vehicle(vehicle_3)
+    
+    vehicle_1.add_passenger(charlie)
+    vehicle_2.add_passenger(taylor)
+    vehicle_2.add_passenger(jude)
+    vehicle_3.add_passenger(ivan)
+    vehicle_3.add_passenger(hailey)
+
+    expect(park.attendee_adults).to eq([charlie, ivan, jude])
   end
 end
