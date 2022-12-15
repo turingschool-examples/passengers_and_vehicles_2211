@@ -27,6 +27,10 @@ class Vehicle
         @passengers << passenger
     end
 
+    def full_title
+        "#{@year} #{@make} #{@model}"
+    end
+
     def num_adults
         num = 0
         @passengers.each do |passenger|
