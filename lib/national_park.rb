@@ -7,6 +7,7 @@ class NationalPark
         @name = name
         @admission_price = admission_price
         @vehicles_in_park = []
+        @revenue_generated = 0
     end
 
     def enter(vehicle)

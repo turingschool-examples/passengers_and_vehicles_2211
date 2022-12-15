@@ -46,5 +46,19 @@ RSpec.describe NationalPark do
         expect(park.passengers_in_park).to eq([charlie, jude, taylor, mason, victoria])
     end
 
+    it "can calculate revenue generated of the park" do
+        vehicle1.add_passenger(charlie)  
+        vehicle1.add_passenger(jude) 
+        vehicle1.add_passenger(taylor) 
+
+        vehicle2.add_passenger(mason) 
+        vehicle2.add_passenger(victoria) 
+        
+        park.enter(vehicle1)
+        park.enter(vehicle2)
+
+        expect(park.revenue_generated).to eq(45)
+    end
+
 
 end
