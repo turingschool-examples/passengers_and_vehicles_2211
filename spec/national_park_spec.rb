@@ -15,6 +15,12 @@ describe NationalPark do
       @jude = Passenger.new({"name" => "Jude", "age" => 20})
       @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
       @adam = Passenger.new({"name" => "Adam", "age" => 36})
+
+      @vehicle1.add_passenger(@charlie)
+      @vehicle1.add_passenger(@jude)
+      @vehicle1.add_passenger(@taylor)
+
+      @vehicle2.add_passenger(@adam)
     end
 
     it '1. exists' do
@@ -34,6 +40,15 @@ describe NationalPark do
       @national_park.add_vehicle(@vehicle2)
 
       expect(@national_park.vehicles).to eq([@vehicle1, @vehicle2])
+    end
+
+    it '4. can list all passengers in the park' do
+      expect(@national_park.list_passengers).to eq([])
+
+      @national_park.add_vehicle(@vehicle1)
+      @national_park.add_vehicle(@vehicle2)
+
+      expect(@national_park.list_passengers).to eq([@charlie, @jude, @taylor, @adam])
     end
   end
 end
