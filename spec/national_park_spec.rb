@@ -59,5 +59,14 @@ describe NationalPark do
 
       expect(@national_park.calculate_revenue).to eq(45)
     end
+
+    it '6. can list all attendees names in alphabetical order' do
+      expect(@national_park.list_all_names).to eq([])
+
+      @national_park.add_vehicle(@vehicle1)
+      @national_park.add_vehicle(@vehicle2)
+
+      expect(@national_park.list_all_names).to eq(["Adam", "Charlie", "Jude", "Taylor"])
+    end
   end
 end

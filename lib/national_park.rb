@@ -16,14 +16,20 @@ class NationalPark
   def list_passengers
     passengers = []
 
-    @vehicles.each do |vehicle|
-      passengers << vehicle.passengers
-    end
+    @vehicles.each { |vehicle| passengers << vehicle.passengers }
 
     passengers.flatten
   end
 
   def calculate_revenue
     @fee * @vehicles.sum { |vehicle| vehicle.num_adults }
+  end
+
+  def list_all_names
+    names = []
+
+    list_passengers.each { |passenger| names << passenger.name }
+
+    names.sort
   end
 end
