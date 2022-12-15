@@ -33,9 +33,28 @@ class Park
 	end
 
 	def list_patrons
-		list = patrons.sort_by{|patron| patron.name}
-		list
+		patrons.sort_by{|patron| patron.name}
 	end
 
-	def list_patrons
+	def list_adults
+		adults = []
+		list_patrons.each do |passenger|
+			if passenger.adult? == true
+				adults << passenger
+			else
+			end
+		end
+		adults
+	end
+
+	def list_minors
+		minors = []
+		list_patrons.each do |passenger|
+			if passenger.adult? == false
+				minors << passenger
+			else
+			end
+		end
+		minors
+	end
 end

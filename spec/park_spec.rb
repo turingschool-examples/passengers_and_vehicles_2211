@@ -54,5 +54,24 @@ RSpec.describe do
 		expect(trixie.list_patrons).to eq([anhnhi, brad, corey])
 	end
 
-	it 'lists minors and adults alphabetically'
+	it 'lists minors and adults alphabetically' do
+		honda.add_passenger(charlie)
+		honda.add_passenger(jude)
+		expect(honda.passengers).to eq([charlie, jude])
+		toyota.add_passenger(taylor)
+		expect(toyota.passengers).to eq([taylor])
+		chevy.add_passenger(corey)
+		chevy.add_passenger(brad)
+		chevy.add_passenger(anhnhi)
+		expect(chevy.passengers).to eq([corey, brad, anhnhi])
+		shadypines.vehicle_enter(honda)
+		shadypines.vehicle_enter(toyota)
+		trixie.vehicle_enter(chevy)
+		expect(shadypines.list_patrons).to eq([charlie, jude, taylor])
+		expect(trixie.list_patrons).to eq([anhnhi, brad, corey])
+		expect(trixie.list_adults).to eq([anhnhi, brad])
+		expect(trixie.list_minors).to eq([corey])
+		expect(shadypines.list_adults).to eq([charlie, jude])
+		expect(shadypines.list_minors).to eq([taylor])
+	end
 end
