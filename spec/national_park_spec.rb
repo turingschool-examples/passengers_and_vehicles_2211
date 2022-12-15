@@ -68,5 +68,14 @@ describe NationalPark do
 
       expect(@national_park.list_all_names).to eq(["Adam", "Charlie", "Jude", "Taylor"])
     end
+
+    it '7. can list all minor attendees names in alphabetical order' do
+      expect(@national_park.list_minor_names).to eq([])
+
+      @national_park.add_vehicle(@vehicle1)
+      @national_park.add_vehicle(@vehicle2)
+
+      expect(@national_park.list_minor_names).to eq(["Taylor"])
+    end
   end
 end
