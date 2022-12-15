@@ -13,4 +13,14 @@ describe Vehicle do
     expect(vehicle.make).to eq('Honda')
     expect(vehicle.model).to eq('Civic')
   end
+
+  it 'is not speeding by default' do
+    expect(vehicle.speeding?).to be false
+  end
+
+  it 'is speeding when it speeds' do
+    vehicle.speed
+
+    expect(vehicle.speeding?).to be true 
+  end
 end
