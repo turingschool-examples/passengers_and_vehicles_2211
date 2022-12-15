@@ -28,4 +28,14 @@ class Vehicle
     @passengers.push(passenger)
   end
 
+  def num_adults
+    num_adults = []
+    @passengers.find_all do |passenger|
+      if passenger.adult?
+        num_adults.push(passenger)
+      end
+    end
+    num_adults.count
+  end
+  
 end
