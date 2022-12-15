@@ -42,8 +42,6 @@ RSpec.describe Passenger do
 
       expect(vehicle.num_adults).to eq(2)
     end
-
-
   end
 end
  
