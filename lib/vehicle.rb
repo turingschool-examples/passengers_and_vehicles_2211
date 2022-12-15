@@ -23,10 +23,9 @@ class Vehicle
     @passengers << passenger
   end
 
+  def num_adults
+      @passengers.find_all do |passenger|
+        @passenger.adult?git starts.count    end
 
-  # def add_passenger
-  #   vehicle.passengers <<
-  # end
-
-
+  end
 end
