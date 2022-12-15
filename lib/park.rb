@@ -14,11 +14,9 @@ class Park
     def list_all_passengers
         passengers = []
         @guest_vehicles.map do |vehicle|
-            vehicle.passengers.map do |passenger|
-                passengers << passenger.name
-            end
+            passengers << vehicle.passengers
         end
-        passengers
+        passengers.flatten
     end
 
 end

@@ -34,8 +34,8 @@ RSpec.describe Park do
         @vehicle.add_passenger(taylor)
 
         @park.new_guest(@vehicle)
-        require 'pry'; binding.pry
-        expect(@park.list_all_passengers).to eq(["Charlie", "Jude", "Taylor"])
+
+        expect(@park.list_all_passengers).to eq([charlie, jude, taylor])
     end
 
     xit "revenue" do
