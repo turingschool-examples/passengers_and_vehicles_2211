@@ -17,6 +17,6 @@ class Passenger
   end
 
   def drive
-    @driver = true if adult?
+    @driver = true
   end
 end

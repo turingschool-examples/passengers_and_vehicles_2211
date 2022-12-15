@@ -31,15 +31,5 @@ describe Passenger do
       expect(@charlie.driver?).to eq(true)
       expect(@taylor.driver?).to eq(false)
     end
-
-    it '5. can make person driver if adult' do
-      expect(@charlie.driver?).to eq(false)
-      
-      @charlie.drive
-      @taylor.drive
-
-      expect(@charlie.driver?).to eq(true)
-      expect(@taylor.driver?).to eq(false)
-    end
   end
 end
