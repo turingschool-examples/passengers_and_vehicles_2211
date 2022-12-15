@@ -1,12 +1,14 @@
 class Park
   attr_reader :name,
               :admission,
-              :vehicles
+              :vehicles,
+              :charge
 
   def initialize(name, admission)
     @name = name
     @admission = admission
     @vehicles = []
+    @revenue = 0
   end
 
   def add_vehicle(vehicle)
@@ -18,6 +20,21 @@ class Park
       vehicle.passengers
     end.flatten
   end
-  
+
+  def charge(admission)
+      @revenue += admission
+  end
+
+  def list_adult_passengers
+    list_all_passengers.select do |passenger|
+      passenger.adult? == true
+    end
+  end
+
+  def charge_adult_passengers
+    list_adult_passengers.map do |adult|
+      adult.charge(admission)
+    end
+  end
 
 end
