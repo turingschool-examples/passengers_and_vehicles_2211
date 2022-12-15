@@ -8,6 +8,8 @@ RSpec.describe Vehicle do
     expect(vehicle.year).to eq("2001")
     expect(vehicle.make).to eq("Honda")
     expect(vehicle.model).to eq("Civic")
+    expect(vehicle.is_speeding).to eq(false)
+    expect(vehicle.passengers).to eq([])
   end
 
   describe '#speeding?' do 
