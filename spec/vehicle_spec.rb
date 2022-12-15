@@ -17,7 +17,7 @@ describe Vehicle do
         expect(vehicle.model).to eq("Civic")
     end
 
-    xit 'can speed' do
+    it 'can speed' do
         expect(vehicle.speeding?).to be false
 
         vehicle.speed
