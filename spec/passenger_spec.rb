@@ -10,5 +10,10 @@ describe Passenger do
     it '1. exists' do
       expect(@passenger).to be_a(Passenger)
     end
+    
+    it '2. has readable attributes' do
+      expect(@passenger.name).to eq("Charlie")
+      expect(@passenger.age).to eq(18)
+    end
   end
 end
