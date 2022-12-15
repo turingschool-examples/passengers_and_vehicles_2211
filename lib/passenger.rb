@@ -1,14 +1,25 @@
 class Passenger
   attr_reader :name,
-              :age
+              :age,
+              :driver
+              
+  def initialize(passenger_info)
+    @name = passenger_info["name"]
+    @age = passenger_info["age"]
+    @driver = false
 
-	def initialize(passenger_info)
-		@name = passenger_info["name"]
-		@age = passenger_info["age"]
-	end
+  end
 
-	def adult?
+  def adult?
     @age >= 18
   end
 
+  def driver?
+    @driver
+  end
+
+  def drive
+    @driver = true
+  end
+	
 end
