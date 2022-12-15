@@ -25,7 +25,7 @@ describe Vehicle do
         expect(vehicle.speeding?).to be true
     end
 
-    xit 'can have passengers' do
+    it 'can have passengers' do
         expect(vehicle.passengers).to eq([])
 
         vehicle.add_passenger(charlie)  
