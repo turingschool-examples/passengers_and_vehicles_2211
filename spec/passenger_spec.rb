@@ -26,6 +26,7 @@ RSpec.describe Passenger do
 
     it "can drive" do
         charlie.drive
+        
         expect(charlie.driver?).to eq(true)
     end
 end
