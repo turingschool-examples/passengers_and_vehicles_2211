@@ -38,6 +38,15 @@ describe Vehicle do
       expect(vehicle.passengers).to eq([charlie, jude, taylor])
     end
 
+		it 'can tell us how many passengers are adults' do
+
+      vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
+
+      expect(vehicle.num_adults).to eq(2)
+    end
+
 	end
 
 end
