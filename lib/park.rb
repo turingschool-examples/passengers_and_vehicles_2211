@@ -41,7 +41,7 @@ class Park
 		attendee_list.sort!
 	end
 
-	def list_of_minors(vehicle)
+	def list_of_minors
 		minor_names = []
 		passengers_in_park.each do |passenger|
 			minor_names << passenger.name if passenger.adult? == false
@@ -49,7 +49,7 @@ class Park
 		alpha_minor_names = minor_names.sort!
 	end
 
-	def list_of_adults(vehicle)
+	def list_of_adults
 		adult_names = []
 		passengers_in_park.each do |passenger|
 			adult_names << passenger.name if passenger.adult?
