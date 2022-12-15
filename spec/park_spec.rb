@@ -18,9 +18,9 @@ describe Park do
         expect(glacier).to be_an_instance_of(Park)
     end
 
-    xit 'has readable attributes' do
+    it 'has readable attributes' do
         expect(glacier.name).to eq("Glacier NP")
-        expect(glacier.day_fee).to eq(35)
+        expect(glacier.price).to eq(35)
     end
 
     xit 'can track vehicles entered' do
