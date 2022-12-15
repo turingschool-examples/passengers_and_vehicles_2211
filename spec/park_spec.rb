@@ -19,7 +19,7 @@ describe Park do
     expect(park.admission_price).to eq(25)
   end  
 
-  it "has not vehicles in the park by default" do
+  it "does not have vehicles in the park by default" do
     park = Park.new("Zion", 25)
     expect(park.vehicles).to eq([])
   end  
