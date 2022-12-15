@@ -14,28 +14,36 @@ class Park
 		@vehicles_in_park << vehicle
 	end
 
-	def passengers_in_park(vehicle)
-		vehicle.passengers.count
+	def passengers_in_park
+		park_passengers = []
+		@vehicles_in_park.each do |vehicle|
+			vehicle.passengers.each do |passenger|
+				park_passengers << passenger
+			end
+		end
+		park_passengers
 	end
 	
-	def calculate_rev(vehicle)
-		vehicle.passengers.each do |passenger|
+	def calculate_revenue
+		@vehicles_in_park.each do |vehicle|
+			vehicle.passengers.each do |passenger|
 			@revenue << @admission_price if passenger.adult?
+			end
 		end
 		@revenue.reduce(:+)
 	end
 
-	def list_of_attendees(vehicle)
-		attendee_names = []
-		vehicle.passengers.each do |passenger|
-			attendee_names << passenger.name
+	def list_of_attendees
+		attendee_list = []
+		passengers_in_park.each do |passenger|
+			attendee_list << passenger.name
 		end
-		alphabetical_names = attendee_names.sort!
+		attendee_list.sort!
 	end
 
 	def list_of_minors(vehicle)
 		minor_names = []
-		vehicle.passengers.each do |passenger|
+		passengers_in_park.each do |passenger|
 			minor_names << passenger.name if passenger.adult? == false
 		end
 		alpha_minor_names = minor_names.sort!
@@ -43,7 +51,7 @@ class Park
 
 	def list_of_adults(vehicle)
 		adult_names = []
-		vehicle.passengers.each do |passenger|
+		passengers_in_park.each do |passenger|
 			adult_names << passenger.name if passenger.adult?
 		end
 		alpha_adult_names = adult_names.sort!
