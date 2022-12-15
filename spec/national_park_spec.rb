@@ -50,5 +50,14 @@ describe NationalPark do
 
       expect(@national_park.list_passengers).to eq([@charlie, @jude, @taylor, @adam])
     end
+
+    it '5. can calculate revenue generated' do
+      expect(@national_park.calculate_revenue).to eq(0)
+
+      @national_park.add_vehicle(@vehicle1)
+      @national_park.add_vehicle(@vehicle2)
+
+      expect(@national_park.calculate_revenue).to eq(45)
+    end
   end
 end

@@ -22,4 +22,8 @@ class NationalPark
 
     passengers.flatten
   end
+
+  def calculate_revenue
+    @fee * @vehicles.sum { |vehicle| vehicle.num_adults }
+  end
 end
