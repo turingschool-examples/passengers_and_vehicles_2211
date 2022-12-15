@@ -68,4 +68,41 @@ class Park
             "$#{@total_revnue}"
         end
     end
+
+    def all_patrons_alphabetized
+        method = all_passengers
+        unsorted = []
+
+        if method == "There are no passengers in #{@name} park."
+            return "There are no patrons in #{@name} park."
+        else
+            @passengers.each do |passenger|
+                unsorted << passenger.name
+            end
+            sorted = unsorted.sort
+
+            return sorted.join("\n")
+        end
+    end
+
+    def all_minor_patrons_alphabetized
+        method = all_passengers
+        unsorted = []
+
+        if method == "There are no passengers in #{@name} park."
+            return "There are no patrons in #{@name} park."
+        else
+            unsorted << @passengers.find_all {|passenger| passenger.adult? == false}
+
+            flat_unsorted = unsorted.flatten
+
+            if flat_unsorted == []
+                return "There are no minors in #{@name} park."
+            else
+                flat_unsorted
+
+                #return flat_sorted.join("\n")
+            end
+        end
+    end
 end
