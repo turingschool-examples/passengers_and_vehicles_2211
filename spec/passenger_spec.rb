@@ -9,7 +9,7 @@ describe Passenger do
         expect(taylor).to be_an_instance_of(Passenger)
     end
 
-    xit 'has readable attributes' do
+    it 'has readable attributes' do
         expect(charlie.name).to eq("Charlie")
         expect(charlie.age).to eq(18)
     end
