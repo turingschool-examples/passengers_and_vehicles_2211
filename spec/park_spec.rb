@@ -44,4 +44,28 @@ RSpec.describe Park do
 
     expect(canyonlands.visitors.count).to eq(5)
   end
+
+  it 'can calculate total revenue' do
+    canyonlands = Park.new('Canyonlands', 20)
+    vehicle = Vehicle.new("2001", "Honda", "Civic")
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+    jude = Passenger.new({"name" => "Jude", "age" => 20})
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+    vehicle.add_passenger(charlie)
+    vehicle.add_passenger(jude)
+    vehicle.add_passenger(taylor)
+    canyonlands.admit_vehicle(vehicle)
+
+    expect(canyonlands.revenue).to eq(60)
+
+    vehicle2 = Vehicle.new("2015", "MB", "Sprinter")
+    james = Passenger.new({"name" => "James", "age" => 32})
+    ruth = Passenger.new({"name" => "Ruth", "age" => 20})
+    vehicle2.add_passenger(james)
+    vehicle2.add_passenger(ruth)
+
+    canyonlands.admit_vehicle(vehicle2)
+
+    expect(canyonlands.revenue).to eq(100)
+  end
 end
