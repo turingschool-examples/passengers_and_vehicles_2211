@@ -19,6 +19,10 @@ RSpec.describe NationalPark do
 
     it "can list all vehicles that enter the park" do
         expect(park.vehicles_in_park).to eq([])
+
+        park.enter(vehicle)
+
+        expect(park.vehicles_in_park).to eq([vehicle])
     end
 
 

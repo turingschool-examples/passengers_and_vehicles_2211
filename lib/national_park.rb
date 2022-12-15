@@ -9,5 +9,8 @@ class NationalPark
         @vehicles_in_park = []
     end
 
+    def enter(vehicle)
+        @vehicles_in_park << vehicle
+    end
 
 end
