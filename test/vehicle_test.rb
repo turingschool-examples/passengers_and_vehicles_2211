@@ -18,8 +18,8 @@ RSpec.describe Passenger do
     it '3. can be checked for speeding' do
       expect(vehicle.speeding?).to eq(false)
 
-      vechicle.speed
-      
+      vehicle.speed
+
       expect(vehicle.speeding?).to eq(true)
     end
 
