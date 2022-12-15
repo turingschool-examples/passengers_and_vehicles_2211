@@ -60,6 +60,47 @@ describe Park do
         glacier.track_vehicle(vehicle_3)
 
         expect(glacier.revenue).to eq(210)
+    end
 
+    it 'can list patrons by name' do
+        vehicle_1.add_passenger(charlie)  
+        vehicle_1.add_passenger(jude)
+        vehicle_1.add_passenger(taylor) 
+        vehicle_2.add_passenger(tori)  
+        vehicle_2.add_passenger(joe)
+        vehicle_3.add_passenger(meghan)
+        glacier.track_vehicle(vehicle_1)
+        glacier.track_vehicle(vehicle_2)
+        glacier.track_vehicle(vehicle_3)
+
+        expect(glacier.patrons).to eq(["Charlie","Joe", "Jude", "Meghan", "Taylor", "Tori"])
+    end
+
+    xit 'can list minors' do
+        vehicle_1.add_passenger(charlie)  
+        vehicle_1.add_passenger(jude)
+        vehicle_1.add_passenger(taylor) 
+        vehicle_2.add_passenger(tori)  
+        vehicle_2.add_passenger(joe)
+        vehicle_3.add_passenger(meghan)
+        glacier.track_vehicle(vehicle_1)
+        glacier.track_vehicle(vehicle_2)
+        glacier.track_vehicle(vehicle_3)
+
+        expect(glacier.adults).to eq([charlie, joe, jude, meghan, tori])
+    end
+
+    xit 'can list minors' do
+        vehicle_1.add_passenger(charlie)  
+        vehicle_1.add_passenger(jude)
+        vehicle_1.add_passenger(taylor) 
+        vehicle_2.add_passenger(tori)  
+        vehicle_2.add_passenger(joe)
+        vehicle_3.add_passenger(meghan)
+        glacier.track_vehicle(vehicle_1)
+        glacier.track_vehicle(vehicle_2)
+        glacier.track_vehicle(vehicle_3)
+
+        expect(glacier.minors).to eq([taylor])
     end
 end
