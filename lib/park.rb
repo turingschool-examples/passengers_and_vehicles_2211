@@ -32,4 +32,9 @@ class Park
     attendees.select {|attendee| !attendee.adult?}.map {|minor| minor.name}.sort
   end
 
+	def list_of_adults_by_name
+		attendees = @vehicles_entered.flat_map {|vehicle| vehicle.passengers}
+    attendees.select {|attendee| attendee.adult?}.map {|adult| adult.name}.sort
+  end
+
 end
