@@ -58,4 +58,17 @@ describe Park do
 
     expect(park.revenue).to eq(15)
   end
+
+  it 'can list the names of attendees' do
+    park.add_vehicle(vehicle_1)
+    park.add_vehicle(vehicle_2)
+    park.add_vehicle(vehicle_3)
+    
+    vehicle_1.add_passenger(charlie)
+    vehicle_2.add_passenger(taylor)
+    vehicle_2.add_passenger(jude)
+    vehicle_3.add_passenger(ivan)
+
+    expect(park.attendee_names).to eq(['Charlie', 'Ivan', 'Jude', 'Taylor'])
+  end
 end
