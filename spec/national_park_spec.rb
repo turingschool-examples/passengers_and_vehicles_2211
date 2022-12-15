@@ -66,4 +66,29 @@ RSpec.describe NationalPark do
 
     expect(park.revenue).to eq("$150")
   end
+
+  it 'will create a list of names of attendees at the park in alphabetical order' do 
+    park = NationalPark.new("Grand Canyon", 30)
+    vehicle1 = Vehicle.new("2001", "Honda", "Civic")
+    vehicle2 = Vehicle.new("2019", "Toyota", "4Runner")
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
+    jude = Passenger.new({"name" => "Jude", "age" => 20}) 
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+    brian = Passenger.new({"name" => "Brian", "age" => 20})
+    john = Passenger.new({"name" => "John", "age" => 18})
+    carolyn = Passenger.new({"name" => "Carolyn", "age" => 23})
+
+    vehicle1.add_passenger(charlie)
+    vehicle1.add_passenger(jude)    
+    vehicle1.add_passenger(taylor)  
+
+    vehicle2.add_passenger(brian)
+    vehicle2.add_passenger(john)
+    vehicle2.add_passenger(carolyn)
+
+    park.add_vehicle(vehicle1)
+    park.add_vehicle(vehicle2)
+
+    expect(park.attendees).to eq(["Brian", "Carolyn", "Charlie", "John", "Jude", "Taylor"])
+  end
 end
