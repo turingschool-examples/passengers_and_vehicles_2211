@@ -24,6 +24,11 @@ it "can differentiate between being an adult or child" do
     expect(taylor.adult?).to eq(false)
 end
 
+it "cannot drive by default" do
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+    expect(charlie.drive). to eq(false)
+end
+
 
 
 end
