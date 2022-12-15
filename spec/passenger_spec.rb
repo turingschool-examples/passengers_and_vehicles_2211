@@ -14,4 +14,15 @@ describe Passenger do
       expect(@charlie.name).to eq("Charlie")
       expect(@charlie.age).to eq(18)
     end
+
+    it 'passengers adult?' do
+    expect(@charlie.adult?).to eq(true)
+    expect(@taylor.adult?).to eq(false)
+    end
+
+    it 'charlie drive?' do
+      expect(@charlie.driver?).to eq(false)
+      @charlie.drive
+      expect(@charlie.driver?).to eq(true)
+    end  
 end
