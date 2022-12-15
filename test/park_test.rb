@@ -11,5 +11,10 @@ RSpec.describe Park do
     it '1. exists' do
       expect(park).to be_a(Park)
     end
+
+    it '2. has readable attributes' do
+      expect(park.name).to eq('Olympic National Park')
+      expect(park.admission).to eq(11.50)
+    end
   end
 end
