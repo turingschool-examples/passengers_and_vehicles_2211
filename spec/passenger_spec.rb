@@ -33,3 +33,4 @@ RSpec.describe Passenger do
     expect(charlie.drive).to eq(true)
   end
 end
+
