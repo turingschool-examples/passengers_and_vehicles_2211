@@ -108,10 +108,10 @@ RSpec.describe Park do
       vehicle2 = Vehicle.new("Ageless", "White Stallion", "Shadowfax")
       dumbledore = Passenger.new({"name" => "Albus", "age" => 188})
       gandalf = Passenger.new({"name" => "Gandalf, the White", "age" => 562})
-
       vehicle2.add_passenger(dumbledore)
       vehicle2.add_passenger(gandalf)
       canyonlands.admit_vehicle(vehicle2)
+
       expect(canyonlands.list_of_adults).to eq([dumbledore, charlie, gandalf])
       expect(canyonlands.list_of_minors).to eq([juddie, taylor])
     end
