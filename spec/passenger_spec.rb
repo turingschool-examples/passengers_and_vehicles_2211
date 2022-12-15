@@ -18,16 +18,23 @@ it "can have an age" do
 end
 
 it "can differentiate between being an adult or child" do
-    charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-    taylor = Passenger.new({"name" => "Taylor", "age" => 12})
-    expect(charlie.adult?).to eq(true)
-    expect(taylor.adult?).to eq(false)
+  charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+  taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+  expect(charlie.adult?).to eq(true)
+  expect(taylor.adult?).to eq(false)
 end
 
 it "cannot drive by default" do
-    charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-    expect(charlie.driver?). to eq(false)
+  charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+  expect(charlie.driver?). to eq(false)
 end
+
+it "can become a driver" do
+  charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+  charlie.drive
+  expect(charlie.driver?). to eq(true)
+end
+
 
 
 
