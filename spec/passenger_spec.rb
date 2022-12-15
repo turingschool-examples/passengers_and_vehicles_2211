@@ -18,5 +18,15 @@ describe Passenger do
     expect(charlie.adult?).to be true
     expect(taylor.adult?).to be false
   end
+
+  it 'is not a driver by default' do
+    expect(charlie.driver?).to be false
+  end
+
+  it 'becomes a driver when they drive' do
+    charlie.drive
+    
+    expect(charlie.driver?).to be true
+  end 
 end
  
