@@ -23,4 +23,9 @@ RSpec.describe Vehicle do
         expect(vehicle.speeding?).to eq(true)
     end
 
+    it "can determine how many passengers are in a vehicle" do
+        expect(vehicle.passengers).to eq([])
+    end
+
+
 end
