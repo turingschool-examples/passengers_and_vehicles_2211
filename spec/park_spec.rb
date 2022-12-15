@@ -8,7 +8,7 @@ RSpec.describe do
 	let(:charlie) { Passenger.new({"name" => "Charlie", "age" => 18}) }
 	let(:taylor) { Passenger.new({"name" => "Taylor", "age" => 12}) }
 	let(:jude) { Passenger.new({"name" => "Jude", "age" => 20}) }
-
+	let(:layla) { Passenger.new({"name" => "Layla", "age" => 9}) }
 	it "exists" do 
 		expect(park).to be_an_instance_of(Park)
 	end
@@ -56,5 +56,16 @@ RSpec.describe do
 		park.add_vehicle(vehicle1)
 
 		expect(park.list_of_attendees(vehicle1)).to eq(["Charlie", "Jude", "Taylor"])
+	end
+
+	it "lists attendees that are minors" do 
+		vehicle1.add_passenger(jude)
+		vehicle1.add_passenger(charlie)
+		vehicle1.add_passenger(taylor)
+		vehicle1.add_passenger(layla)
+
+		park.add_vehicle(vehicle1)
+
+		expect(park.list_of_minors(vehicle1)).to eq(["Layla", "Taylor"])
 	end
 end
