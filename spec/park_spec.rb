@@ -108,8 +108,8 @@ describe Park do
     park.add_vehicle(vehicle2)
 
     expect(park.minors_adults).to eq({
-      :minors => ["Emily", "Mark"],
-      :adults => ["Charlie", "Jamal", "Julia"]
+      :minors => [emily, mark],
+      :adults => [charlie, jamal, julia]
     })
   end
 

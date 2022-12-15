@@ -43,8 +43,8 @@ class Park
         ordered_list[:minors] << passenger
       end
     end
-   ordered_list[:minors]= ordered_list[:minors].map{ |passenger| passenger.name }.sort
-   ordered_list[:adults]= ordered_list[:adults].map{ |passenger| passenger.name }.sort
+   ordered_list[:minors]= ordered_list[:minors].sort_by{|passenger| passenger.name}
+   ordered_list[:adults]= ordered_list[:adults].sort_by{|passenger| passenger.name}
    ordered_list
   end
 end
