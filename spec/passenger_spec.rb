@@ -10,6 +10,10 @@ RSpec.describe Passenger do
         expect(taylor).to be_instance_of(Passenger)
     end
 
+    it "has atributes" do
+        expect(charlie.name).to eq("Charlie")
+        expect(taylor.name).to eq("Taylor")
+    end
 
 
 end
