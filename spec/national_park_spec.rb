@@ -13,5 +13,9 @@ describe NationalPark do
       @jude = Passenger.new({"name" => "Jude", "age" => 20})
       @taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
     end
+
+    it '1. exists' do
+      expect(@national_park).to be_a(NationalPark)
+    end
   end
 end
