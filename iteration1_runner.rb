@@ -25,12 +25,12 @@ p taylor.adult?
 puts
 # => false
 
-p charlie.driver?
-puts
-# => false
+# p charlie.driver?
+# puts
+# # => false
 
-p charlie.drive
+# p charlie.drive
 
-p charlie.driver?
-puts
-# => true
+# p charlie.driver?
+# puts
+# # => true
