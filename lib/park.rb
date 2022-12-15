@@ -24,4 +24,10 @@ class Park
     (vehicle.num_adults * admission_price)
     end
   end
+
+  def attendee_names
+    list_passengers.map do |passenger|
+      passenger.name
+    end.sort
+  end
 end
