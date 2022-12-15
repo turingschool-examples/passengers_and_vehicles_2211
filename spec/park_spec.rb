@@ -2,7 +2,7 @@ require './lib/vehicle'
 require './lib/passenger'
 require './lib/park'
 
-RSpec.describe Vehicle do
+RSpec.describe Park do
     let(:park1) { Park.new("Jurrasic", 5)}
     let(:vehicle1) { Vehicle.new("2001", "Honda", "Civic") }
     let(:vehicle2) { Vehicle.new("2005", "Toyota", "Tacoma") }
@@ -38,9 +38,11 @@ RSpec.describe Vehicle do
     end
 
     it 'can list all patrons' do
-        park1.add_patron(charlie)
-        park1.add_patron(taylor)
-        park1.add_patron(jude)
-        expect(park1.list_patrons).to eq([charlie, taylor, jude])
+        park1.add_vehicle(vehicle1)
+        park1.add_vehicle(vehicle2)
+        vehicle1.add_passenger(jude)
+        vehicle1.add_passenger(taylor)
+        vehicle2.add_passenger(charlie)
+        expect(park1.list_patrons).to eq([jude, taylor, charlie])
     end
 end
