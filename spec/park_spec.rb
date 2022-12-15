@@ -94,6 +94,27 @@ RSpec.describe Park do
       expect(canyonlands.list_patrons_by_name).to eq(["Albus", "Charlie", "Gandalf, the White", "Jude", "Taylor"])
 
     end
+
+    it 'can list all the adults in the park' do
+      canyonlands = Park.new('Canyonlands', 20)
+      vehicle = Vehicle.new("2001", "Honda", "Civic")
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+      juddie = Passenger.new({"name" => "Juddie", "age" => 2})
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+      vehicle.add_passenger(charlie)
+      vehicle.add_passenger(juddie)
+      vehicle.add_passenger(taylor)
+      canyonlands.admit_vehicle(vehicle)
+      vehicle2 = Vehicle.new("Ageless", "White Stallion", "Shadowfax")
+      dumbledore = Passenger.new({"name" => "Albus", "age" => 188})
+      gandalf = Passenger.new({"name" => "Gandalf, the White", "age" => 562})
+
+      vehicle2.add_passenger(dumbledore)
+      vehicle2.add_passenger(gandalf)
+      canyonlands.admit_vehicle(vehicle2)
+      expect(canyonlands.list_of_adults).to eq([dumbledore, charlie, gandalf])
+      expect(canyonlands.list_of_minors).to eq([juddie, taylor])
+    end
   end
 
 end

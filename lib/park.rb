@@ -27,4 +27,15 @@ class Park
     end
     names.sort
   end
+
+  def list_of_adults
+    adults = @visitors.select { |visitor| visitor.age >= 18 }
+    adults.sort_by(&:name)
+  end
+
+  def list_of_minors
+    minors = @visitors.select { |visitor| visitor.age < 18 }
+    minors.sort_by(&:name)
+  end
+
 end
