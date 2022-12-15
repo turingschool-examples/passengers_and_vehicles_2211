@@ -21,5 +21,9 @@ class NationalPark
     passengers.flatten
   end
 
-  
+  def revenue
+    adults = @vehicles.map { |vehicle| vehicle.num_adults} 
+    revenue = adults.sum * @admission_cost
+    "$#{revenue}"
+  end
 end

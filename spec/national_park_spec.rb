@@ -64,6 +64,6 @@ RSpec.describe NationalPark do
     park.add_vehicle(vehicle1)
     park.add_vehicle(vehicle2)
 
-    expect(park.revenue).to eq("$180")
+    expect(park.revenue).to eq("$150")
   end
 end
