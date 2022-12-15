@@ -27,11 +27,15 @@ class Park
 	end
 
 	def list_of_minors_by_name
-    attendees.select {|attendee| !attendee.adult?}.map {|minor| minor.name}.sort
+    attendees.select {|attendee| !attendee.adult?}.map do |minor| 
+			minor.name
+		end.sort
   end
 
 	def list_of_adults_by_name
-    attendees.select {|attendee| attendee.adult?}.map {|adult| adult.name}.sort
+    attendees.select {|attendee| attendee.adult?}.map do |adult| 
+			adult.name
+		end.sort
   end
 
 	def attendees
