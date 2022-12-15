@@ -13,7 +13,6 @@ class Park
   def admit_vehicle(vehicle)
     @vehicles_entered << vehicle
     @visitors += vehicle.passengers
-    @visitors
   end
 
   def revenue
