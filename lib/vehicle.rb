@@ -1,5 +1,5 @@
 class Vehicle
-  attr_reader :year, :make, :model, :passengers
+  attr_reader :year, :make, :model, :passengers, :num_adults
 
   def initialize(year, make, model)
     @year = year
@@ -7,7 +7,7 @@ class Vehicle
     @model = model
     @speeding = false
     @passengers = []
-    @num_adults = 0
+    @num_adults = num_adults.count
   end
 
   def speeding?
@@ -23,11 +23,13 @@ class Vehicle
   end
 
   def num_adults
-    require 'pry'; binding.pry
-    @passengers.map do |passenger|
-      if passengers[passenger].adult? == true
-        num_adults += 0
-      end
+    @passengers.each do |passenger|
+     if passenger.adult?
+      require 'pry'; binding.pry
+        @num_adults += 1
+     else 
+      @num_adults = 0
+     end
     end
   end
 end
