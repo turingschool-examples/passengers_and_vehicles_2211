@@ -65,7 +65,7 @@ describe Park do
     expect(park.calculate_revenue).to eq(75)  
   end
 
-  it "generate lists of attendees based on age" do
+  it "can generate lists of attendees based on age" do
     park = Park.new("Zion", 25)
     honda = Vehicle.new("2001", "Honda", "Civic")
     toyota = Vehicle.new("2004", "Toyota", "4Runner")
@@ -91,21 +91,5 @@ describe Park do
     expect(park.generate_patron_lists[:all]).to eq(["Callie", "Charlie", "Matt", "Stephanie", "Sunita", "Taylor"])
 
   end
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 end
