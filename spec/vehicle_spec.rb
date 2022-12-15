@@ -37,7 +37,7 @@ RSpec.describe Vehicle do
         expect(@vehicle.passengers).to eq([charlie, jude, taylor])
     end
 
-    xit "num_adults" do
+    it "num_adults" do
         charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
         jude = Passenger.new({"name" => "Jude", "age" => 20})
         taylor = Passenger.new({"name" => "Taylor", "age" => 12})
