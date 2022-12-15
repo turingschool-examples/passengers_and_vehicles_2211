@@ -3,6 +3,10 @@ require './lib/vehicle'
 
 RSpec.describe Vehicle do
   let(:vehicle) { Vehicle.new("2001", "Honda", "Civic") }
+  let(:charlie) { Passenger.new({"name" => "Charlie", "age" => 18}) }
+  let(:taylor) { Passenger.new({"name" => "Taylor", "age" => 12}) }
+  let(:jude) { Passenger.new({"name" => "Jude", "age" => 20}) }
+
 
   describe 'Iteration 2' do
     it "exists" do
@@ -21,6 +25,10 @@ RSpec.describe Vehicle do
       vehicle.speed
 
       expect(vehicle.speeding?).to be true
+    end
+
+    it "starts with an empty passengers array" do
+      expect(vehicle.passengers).to eq([])
     end
 
   end
