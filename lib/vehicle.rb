@@ -13,4 +13,8 @@ class Vehicle
 		@speeding
 	end
 
+	def speed 
+		@speeding = true
+	end
+
 end
