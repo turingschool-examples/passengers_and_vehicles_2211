@@ -42,7 +42,7 @@ RSpec.describe Passenger do
   it "once charlie drives, he becomes a driver" do 
     @charlie.drive
 
-    expect(@charlie.driver?).to eq(false)
+    expect(@charlie.driver?).to eq(true)
   end
 
 end 

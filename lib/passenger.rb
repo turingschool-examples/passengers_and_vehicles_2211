@@ -21,7 +21,7 @@ class Passenger
   end
 
   def drive
-    @can_drive == true
+    @can_drive = true
   end
 
 end
