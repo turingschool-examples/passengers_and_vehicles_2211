@@ -40,4 +40,12 @@ class Park
 		end
 		alpha_minor_names = minor_names.sort!
 	end
+
+	def list_of_adults(vehicle)
+		adult_names = []
+		vehicle.passengers.each do |passenger|
+			adult_names << passenger.name if passenger.adult?
+		end
+		alpha_adult_names = adult_names.sort!
+	end
 end

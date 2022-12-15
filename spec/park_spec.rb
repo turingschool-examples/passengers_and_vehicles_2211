@@ -58,7 +58,7 @@ RSpec.describe do
 		expect(park.list_of_attendees(vehicle1)).to eq(["Charlie", "Jude", "Taylor"])
 	end
 
-	it "lists attendees that are minors" do 
+	it "lists minor attendees" do 
 		vehicle1.add_passenger(jude)
 		vehicle1.add_passenger(charlie)
 		vehicle1.add_passenger(taylor)
@@ -67,5 +67,16 @@ RSpec.describe do
 		park.add_vehicle(vehicle1)
 
 		expect(park.list_of_minors(vehicle1)).to eq(["Layla", "Taylor"])
+	end
+
+	it "lists adult attendees" do 
+		vehicle1.add_passenger(jude)
+		vehicle1.add_passenger(charlie)
+		vehicle1.add_passenger(taylor)
+		vehicle1.add_passenger(layla)
+
+		park.add_vehicle(vehicle1)
+
+		expect(park.list_of_adults(vehicle1)).to eq(["Charlie", "Jude"])
 	end
 end
