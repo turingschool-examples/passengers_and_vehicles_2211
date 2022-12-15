@@ -18,6 +18,6 @@ RSpec.describe Park do
     expect(canyonlands.vehciles_entered).to eq([])
     vehicle = Vehicle.new("2001", "Honda", "Civic")
     canyonlands.admit_vehicle(vehicle)
-    expect(canyonlands.vehciles_entered).to eq([vehcile])
+    expect(canyonlands.vehciles_entered).to eq([vehicle])
   end
 end
