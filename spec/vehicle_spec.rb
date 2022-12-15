@@ -11,4 +11,12 @@ RSpec.describe Vehicle do
     expect(vehicle.make).to eq("Honda")
     expect(vehicle.model).to eq("Civic")
   end
+
+  it 'can check if the vehicle is speeding' do
+    vehicle = Vehicle.new("2001", "Honda", "Civic")
+
+    expect(vehicle.speeding?).to be false
+    vehicle.speed
+    expect(vehicle.speeding?).to be true
+  end
 end
