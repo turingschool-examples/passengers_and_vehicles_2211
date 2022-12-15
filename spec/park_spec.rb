@@ -8,6 +8,7 @@ let(:vehicle) {Vehicle.new("2001", "Honda", "Civic")}
 let(:jude) {Passenger.new({"name" => "Jude", "age" => 20})}
 let(:taylor) {Passenger.new({"name" => "Taylor", "age" => 12})}
 let(:charlie) {Passenger.new({"name" => "Charlie", "age" => 18})}
+let(:larry) {Passenger.new({"name" => "Larry", "age" => 8})}
 
     it 'exists' do
         expect(park).to be_an_instance_of(Park)
@@ -60,4 +61,14 @@ let(:charlie) {Passenger.new({"name" => "Charlie", "age" => 18})}
 
         expect(park.patrons).to eq(["Charlie", "Jude", "Taylor"])
     end
+
+    # it 'tracks list of minors and adults' do
+    #     park.passenger_enter(jude)
+    #     park.passenger_enter(taylor)
+    #     park.passenger_enter(charlie)
+    #     park.passenger_enter(larry)
+
+    #     expect(park.minor_list).to eq([larry, taylor])
+    #     expect(park.adult_list).to eq(["Charlie", "Jude"])
+    # end
 end

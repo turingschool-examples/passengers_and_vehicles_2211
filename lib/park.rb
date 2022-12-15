@@ -36,4 +36,14 @@ class Park
         end
         patron_list.sort
     end
+
+    # def minor_list
+    #     minors = []
+    #     @passengers_in_park.map do |passenger|
+    #         passenger.each do |name|
+    #         minors << passenger.age < 18
+    #     end
+    #     minors.sort
+    # end
+    # end
 end
