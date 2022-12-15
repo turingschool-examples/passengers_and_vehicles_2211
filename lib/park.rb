@@ -13,4 +13,11 @@ class Park
     @vehicles << vehicle
   end
 
+  def list_all_passengers
+    @vehicles.map do |vehicle|
+      vehicle.passengers
+    end.flatten
+  end
+  
+
 end
