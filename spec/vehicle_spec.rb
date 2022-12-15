@@ -15,4 +15,10 @@ RSpec.describe Vehicle do
         expect(@vehicle.make).to eq("Honda")
         expect(@vehicle.model).to eq("Civic")
     end
+
+    it "can speed" do
+        expect(@vehicle.speeding?).to eq(false)
+        @vehicle.speeding
+        expect(@vehicle.speeding?).to eq(true)
+    end
 end
