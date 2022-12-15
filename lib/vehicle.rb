@@ -25,5 +25,12 @@ class Vehicle
         @passengers << passenger
     end
 
+    def num_adults
+        adults = []
+        @passengers.each do |passenger|
+            adults << passenger if passenger.age >= 18
+        end
+        adults.length
+    end
 
 end
