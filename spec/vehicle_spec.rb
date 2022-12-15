@@ -11,19 +11,19 @@ RSpec.describe Vehicle do
         expect(@vehicle).to be_an_instance_of(Vehicle)
     end
 
-    it "year, make, and model" do
+    xit "year, make, and model" do
         expect(@vehicle.year).to eq(2001)
         expect(@vehicle.make).to eq("Honda")
         expect(@vehicle.model).to eq("Civic")
     end
 
-    it "speed and speeding?" do
+    xit "speed and speeding?" do
         expect(@vehicle.speeing?).to eq(false)
         @vehicle.speed
         expect(@vehicle.speeing?).to eq(true)
     end
 
-    it "passengers" do
+    xit "passengers" do
         expect(@vehicle.passengers).to eq([])
 
         charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
@@ -37,7 +37,7 @@ RSpec.describe Vehicle do
         # expect(@vehicle.passengers).to eq([]) names instead?
     end
 
-    it "num_adults" do
+    xit "num_adults" do
         charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
         jude = Passenger.new({"name" => "Jude", "age" => 20})
         taylor = Passenger.new({"name" => "Taylor", "age" => 12})
