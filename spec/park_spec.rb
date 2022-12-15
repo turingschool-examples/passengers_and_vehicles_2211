@@ -22,7 +22,7 @@ describe Park do
   end
 
   it 'has no vehicles by default' do
-    expect(park.vehicles).to eq ([])
+    expect(park.vehicles).to eq([])
   end
   
   it 'can add vehicles and list them' do
@@ -30,7 +30,7 @@ describe Park do
     park.add_vehicle(vehicle_2)
     park.add_vehicle(vehicle_3)
 
-    expect(park.vehicles).to eq ([vehicle_1, vehicle_2, vehicle_3])
+    expect(park.vehicles).to eq([vehicle_1, vehicle_2, vehicle_3])
   end
 
   it 'can list passengers in the park' do
@@ -43,6 +43,19 @@ describe Park do
     vehicle_2.add_passenger(jude)
     vehicle_3.add_passenger(ivan)
 
-    expect(park.list_passengers).to eq ([charlie, taylor, jude, ivan])
+    expect(park.list_passengers).to eq([charlie, taylor, jude, ivan])
+  end
+
+  it 'can determine revenue generated' do
+    park.add_vehicle(vehicle_1)
+    park.add_vehicle(vehicle_2)
+    park.add_vehicle(vehicle_3)
+    
+    vehicle_1.add_passenger(charlie)
+    vehicle_2.add_passenger(taylor)
+    vehicle_2.add_passenger(jude)
+    vehicle_3.add_passenger(ivan)
+
+    expect(park.revenue).to eq(15)
   end
 end
