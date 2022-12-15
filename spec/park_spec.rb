@@ -22,10 +22,33 @@ describe Park do
 		it 'can list all vehicles that enter the park' do
 
 			expect(park.vehicles_entered).to eq([])
+
+			vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
 			
 			park.admit_vehicle(vehicle)
 
 			expect(park.vehicles_entered).to eq([vehicle])
+		end
+
+		it 'can #generate_revenue per adult' do
+
+			vehicle.add_passenger(charlie)
+      vehicle.add_passenger(jude)
+      vehicle.add_passenger(taylor)
+
+			park.admit_vehicle(vehicle)
+
+			expect(park.generate_revenue).to eq(20)
+
+			vehicle_two = Vehicle.new("2003", "Toyota", "4Runner")
+			vehicle_two.add_passenger(charlie)
+      vehicle_two.add_passenger(taylor)
+
+			park.admit_vehicle(vehicle_two)
+
+			expect(park.generate_revenue).to eq(30)
 		end
 
 

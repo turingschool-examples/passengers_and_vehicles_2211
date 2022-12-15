@@ -13,4 +13,13 @@ class Park
 	def admit_vehicle(vehicle)
 		@vehicles_entered << vehicle
 	end
+
+	def generate_revenue
+		revenue = 0
+		@vehicles_entered.each do |vehicle|
+			revenue += vehicle.num_adults * @admission_price
+		end
+		revenue
+	end
+
 end
