@@ -3,7 +3,7 @@ class Passenger
   
   def initialize(details)
     @details = details
-    @adult = true
+    @adult = nil
   end
 
   def name
@@ -18,7 +18,8 @@ class Passenger
     if @details['age'] <= 17
       @adult = false
     else
-      @adult
+      @adult = true
     end
   end
+
 end

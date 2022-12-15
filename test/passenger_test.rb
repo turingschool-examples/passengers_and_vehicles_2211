@@ -14,7 +14,7 @@ RSpec.describe Passenger do
       expect(charlie.name).to eq('Charlie')
     end
 
-    it '3. has an age' do
+    xit '3. has an age' do
       expect(charlie.age).to eq(18)
     end
 
@@ -23,16 +23,18 @@ RSpec.describe Passenger do
       expect(taylor.adult?).to eq(false)
     end
 
-#  charlie.adult?
-# # => true
+    it '5. sets the passenger to driver' do
+      expect(charlie.driver?).to eq(false)
 
-#  taylor.adult?
-# # => false
+      charlie.drive
+      
+      expect(charlie.driver?).to eq(true)
+    end
 
 #  charlie.driver?
 # # => false
 
-#  charlie.drive
+#  
 
 #  charlie.driver?
 # # => true
