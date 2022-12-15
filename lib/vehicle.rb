@@ -30,10 +30,9 @@ class Vehicle
 
   def num_adults
     count = 0
-    if passenger.adult? true
+    if @passengers[age] > 17
         count += 1
     end
-    count
   end
 
 end
