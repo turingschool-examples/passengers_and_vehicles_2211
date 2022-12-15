@@ -7,6 +7,10 @@ describe Park do
   let(:vehicle_1) {Vehicle.new('2001', 'Honda', 'Civic')}
   let(:vehicle_2) {Vehicle.new('2021', 'Nissan', 'Rogue')}
   let(:vehicle_3) {Vehicle.new('2019', 'Dodge', 'Ram')}
+  let(:charlie) {Passenger.new({'name' => 'Charlie', 'age' => 18})}
+  let(:taylor) {Passenger.new({'name' => 'Taylor', 'age' => 12})}
+  let(:jude) {Passenger.new({'name' => 'Jude', 'age' => 20})}
+  let(:ivan) {Passenger.new({'name' => 'Ivan', 'age' => 36})}
 
   it 'exists' do
     expect(park).to be_a(Park)
@@ -27,5 +31,18 @@ describe Park do
     park.add_vehicle(vehicle_3)
 
     expect(park.vehicles).to eq ([vehicle_1, vehicle_2, vehicle_3])
+  end
+
+  it 'can list passengers in the park' do
+    park.add_vehicle(vehicle_1)
+    park.add_vehicle(vehicle_2)
+    park.add_vehicle(vehicle_3)
+    
+    vehicle_1.add_passenger(charlie)
+    vehicle_2.add_passenger(taylor)
+    vehicle_2.add_passenger(jude)
+    vehicle_3.add_passenger(ivan)
+
+    expect(park.list_passengers).to eq ([charlie, taylor, jude, ivan])
   end
 end
