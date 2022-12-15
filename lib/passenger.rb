@@ -7,9 +7,9 @@ class Passenger
         
     end
 
-def 
+    def driver?
 
-
-
+        
+    end
 
 end
