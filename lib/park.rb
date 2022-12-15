@@ -36,4 +36,15 @@ class Park
             adult.name
         end.sort
     end
+
+    def minors
+        minors = park_goers.find_all do |passenger|
+            !passenger.adult?
+        end
+
+        minors.map do |minor|
+            minor.name
+        end.sort
+    end
+
 end
