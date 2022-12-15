@@ -32,10 +32,18 @@ describe Vehicle do
   end
 
   it 'can add passengers' do
-      vehicle.add_passenger(charlie)
-      vehicle.add_passenger(jude)
-      vehicle.add_passenger(taylor)
+    vehicle.add_passenger(charlie)
+    vehicle.add_passenger(jude)
+    vehicle.add_passenger(taylor)
 
-      expect(vehicle.passengers).to eq([charlie, jude, taylor])
+    expect(vehicle.passengers).to eq([charlie, jude, taylor])
+  end
+
+  it 'can count the number of adults' do
+    vehicle.add_passenger(charlie)
+    vehicle.add_passenger(jude)
+    vehicle.add_passenger(taylor)
+
+    expect(vehicle.num_adults).to eq (2)
   end
 end
