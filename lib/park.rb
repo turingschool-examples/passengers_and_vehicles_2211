@@ -20,4 +20,10 @@ class Park
     def revenue
         park_goers.length * @price
     end
+
+    def patrons
+        park_goers.map do |passenger|
+            passenger.name
+        end.sort
+    end
 end
