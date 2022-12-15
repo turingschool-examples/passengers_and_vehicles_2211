@@ -21,7 +21,7 @@ class Park
 
   def revenue
     vehicles.sum do |vehicle|  
-    (vehicle.num_adults * admission_price)
+      (vehicle.num_adults * admission_price)
     end
   end
 
@@ -31,24 +31,12 @@ class Park
     end.sort
   end
 
-  def names_attendee_minors
-    list_passengers.map do |passenger|
-      passenger.name if !passenger.adult?
-    end.compact.sort
-  end
-
-  def names_attendee_adults
-    list_passengers.map do |passenger|
-      passenger.name if passenger.adult?
-    end.compact.sort
-  end 
-
   def attendee_minors
     minors = list_passengers.select do |passenger|
       !passenger.adult?
     end
     minors.sort_by do |minor|
-    minor.name
+      minor.name
     end
   end
 
@@ -60,4 +48,16 @@ class Park
       adult.name
     end
   end
+
+  def names_attendee_minors
+    attendee_minors.map do |minor|
+      minor.name 
+    end
+  end
+
+  def names_attendee_adults
+    attendee_adults.map do |adult|
+      adult.name
+    end
+  end 
 end
