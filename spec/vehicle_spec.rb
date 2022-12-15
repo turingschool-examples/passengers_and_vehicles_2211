@@ -14,6 +14,15 @@ describe Vehicle do
       expect(@vehicle.year).to eq("2001")
       expect(@vehicle.make).to eq("Honda")
       expect(@vehicle.model).to eq("Civic")
+      expect(@vehicle.passengers).to eq([])
+    end
+
+    it '3. can speed and check if speeding' do
+      expect(@vehicle.speeding?).to eq(false)
+
+      @vehicle.speed
+
+      expect(@vehicle.speeding?).to eq(true)
     end
   end
 end
