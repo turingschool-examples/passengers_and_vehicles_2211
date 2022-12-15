@@ -23,4 +23,11 @@ RSpec.describe Passenger do
         expect(@taylor.adult?).to eq(false)
     end
 
+    it "checks if driver" do
+        #require 'pry'; binding.pry
+        expect(@charlie.driver?).to eq(false)
+        @charlie.driver
+        expect(@charlie.driver?).to eq(true)
+    end
+
 end
