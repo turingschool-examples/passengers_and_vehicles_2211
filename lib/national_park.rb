@@ -26,4 +26,9 @@ class NationalPark
     revenue = adults.sum * @admission_cost
     "$#{revenue}"
   end
+
+  def attendees
+   names = passengers.map { |passenger| passenger.name}
+   names.sort { |a,b| a <=> b}
+  end
 end
