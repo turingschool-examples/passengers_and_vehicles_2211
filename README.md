@@ -100,7 +100,22 @@ pry(main)> vehicle.num_adults
 # => 2
 ```
 
-## Iteration 3
+## Iteration 3 (12/19/2022)
+
+You have been contracted by the Colorado Department of Transportation to build a software system that can track cars passing through intersections. Specifically, they would like you to implement the following features:
+
+  1. Each intersection has two cross streets, as well as a way to read that data.
+  1. An intersection can list all vehicles that passed through it.
+  1. An intersection can list all vehicles that were speeding through it.
+  1. An intersection can list all drivers that were speeding through it.
+
+Build upon your existing code from the first two iterations to implement this functionality.
+
+## Iteration 4 (12/19/2022)
+
+CDOT has given you additional functionality it would like you to implement. They would like the ability to issue tickets to drivers, and track a driver's outstanding balance of tickets owed. Ticket prices vary based on whether the driver was a first time offender or a repeat offender. Finally, CDOT needs to be able to accept payments for tickets.
+
+## Iteration 3 (12/15/2022)
 
 You have been contracted by the National Park Service to create a program that can track revenue for its parks. Specifically, they would like you to implement the following features:
 
@@ -111,6 +126,6 @@ You have been contracted by the National Park Service to create a program that c
 
 Build upon your existing code from the first two iterations to implement this functionality.
 
-## Iteration 4
+## Iteration 4 (12/15/2022)
 
 The National Park Service has given you additional functionality it would like you to implement. They would like to be able to track patrons of their parks. They would like to be able to generate a list of names of all attendees, as well as generate a list of minors and a list of adults. It would like all of these lists to be sorted alphabetically.
